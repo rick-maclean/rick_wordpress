@@ -1,0 +1,33 @@
+YouTube for setting up WordPress on XAMPP
+https://www.youtube.com/watch?v=Xo_Q3V1QSdg 
+
+1) install XAMPP
+2) download and unzip WordPress 
+3) create a database in localhost phpMyAdmin 
+4)edit wp-config-sample.php 
+can set the following 
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'database_name_here');
+
+/** MySQL database username */
+define('DB_USER', 'username_here');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'password_here');
+
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
+
+save as wp-config.php 
+
+5) launch on localhost/wordpress 
+continue
+SiteName: RickWordPress
+Username: wordpress 
+Password: nopassword
+email: rick_maclean@sil.org
+
+6) now we can log on and manage the site and also view it top left corner 
+
+================================================================================
