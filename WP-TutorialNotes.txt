@@ -31,3 +31,5 @@ email: rick_maclean@sil.org
 6) now we can log on and manage the site and also view it top left corner 
 
 ================================================================================
+
+http://localhost/wordpress/wp-admin/
