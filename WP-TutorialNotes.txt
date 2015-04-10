@@ -143,21 +143,134 @@ publish an article or a news item or an opinion piece or an image or a video, it
 types of content, Posts and Pages. Understanding the similarities and differences between them, is important to 
 create a well organized site. 
 
+Posts 
+* News/updates 
+* most recent appears at top 
+* date author etc 
+* categories 
+*comments and social links 
+
+Pages
+* Permanent information (about site vs )
+* Organized in parent/child relationships 
+* normally available through menus (have to have a link to it since are not posts) 
+* usually no comments but can have them and social links if you want 
+
+Throughout the rest of this course, I will set up a demo site for myself, as I show you how the different 
+functions work from within WordPress. And I want you to create your own demo content as you follow along. 
+So when I create a post, you create a post. If I upload an image, you upload and image. If I add a video, 
+you add a video and so on. That way, you'll be working with your own material and you'll learn how to use 
+the application as you follow along. Now let's get cracking.
+
 
 Creating a new post***********=====================
 ===================******************************
 
 Using categories and tags***********=====================
 ===================******************************
+In WordPress your posts are organized based on categories and tags. When you're new to WordPress the difference 
+between categories and tags might not be all that clear, so let me give you a primer. Categories is the main 
+organizing tool of WordPress. Any post you create has to belong to at least one category. You can create as 
+many categories as you want, and you can also assign as many categories as you want to a single post. But like 
+I said, every post must belong to one category, because that's how WordPress keeps track of your posts.
+
+Categories
+* main organizing tool 
+* broad topics 
+Example: Jackets, Pants, Shirts (in closet) 
+
+Tags (optional)
+* Associative organizing tool 
+* relational topics 
+Eg. Brand, material, color (could be jacket, and shirt with same brand)
+     relate content together
+	 
+go to Posts (see Uncategorized)
+Categories : New (call it News)
+
+make this default:
+Settings : Writing --> change Default Post Category 
+
+need to change the posts to be the category i created. 
+
+TAGS:
+Now we can take a look at tags as well. You'll notice that there's a difference in how tags and categories are 
+displayed. You'll notice that while the categories have check boxes and appear in the hierarchical system 
+where you have parent and child relationships, the tags are free form text elements. And this is what's 
+neat about tags, here you can just type in what you think relates to this. 
+
+ And you'll notice later on in the course, as we start using tags more and more, they'll actually come up as 
+ suggested tags when we start typing.
+ 
+ So think about what categories and tags you want to apply and try to not have too many categories or 
+ tags on your site, because that can get very confusing.
+After all, categories and tags are organizational tools. They're used for organization.
+
+
 
 Advanced text formatting***********=====================
 ===================******************************
 
+The second line of the tools starts with what I consider to be the most important element in this toolkit. 
+And that is this drop-down that allows you to apply different styles to different content. When you write 
+standard content in Wordpress or anywhere else on the web, you're creating what's known as paragraphs.
+
+****And paragraphs are simply paragraphs of text but to separate your content, you're probably also gonna 
+add in some different headings and subheadings. And it's very important that you highlight these headings 
+correctly inside WordPress so that 
+Google 
+and other readers understand that these are subheadings. 
+
+Don't apply color since Theme Designer chose colors
+
 Creating and managing links***********=====================
 ===================******************************
+Links are the fundamental building blocks of the world wide web. In fact, without links, there wouldn't be 
+a web to begin with. Links can be attached to many different elements on a webpage, most prominently 
+text and images. Creating links is simply a matter of attaching an anchor tag with the URL to the target 
+location to an element on your page. Sounds complicated I know, but WordPress makes it really simple. To 
+start off you need two elements, a link target URL or in other words the address to the page you want to 
+link to, and the text or image you want to become a link to that address.
+
+Do links to other sites as open in new tab vs in same tab.
 
 Adding images***********=====================
 ===================******************************
+Images can add beauty, information and context to the content on your site, and they can also be the 
+focal point of posts and pages, or even a gallery on your site. WordPress allows you to add images in 
+many different ways and also allows you to manipulate those images once they're added into your content. 
+
+Edit post
+Add Media allows me to add pictures.
+
+When you upload an image to WordPress, WordPress actually makes a new post called an attachment post that 
+has all the information about that image.
+That means people who visit the site can see that attachment post and all the information about the image, 
+and it also means. If you need to use an image again later in your site, you can simply go here to the Media 
+Library, make a search for the image in question, and then just use it again. 
+
+So you don't have to re-upload an image every time you want to use it. Once it's uploaded into the system, 
+you can use it anywhere you want. Of course, for you to be able to find your image, you have to make sure it 
+has a title that you can recognize.
+
+The Alternate Text is the most ignored and most important feature of images on the web. The idea of the 
+Alternate Text is if someone visits the site and don't see the image, either because there's something 
+wrong or because their using a browser that doesn't display images like a text-to-speech browser or maybe 
+a smart watch or a glass or something like that.
+
+They need to get the information from the image and that's the information that's displayed in the 
+Alternate Text. The Alternate Text should, be a description of the image. 
+ Now there's three rules that apply here. The first rule is, if the image has relevance to the content 
+ or has some information in it, the Alternate Text should be that information. So because this image has 
+ relevance, I'm going to describe it. If the image is a link pointing to somewhere else, the Alternate 
+ Text should tell the viewer where that link is pointing.
+That's the same as the title for the link. If the image has absolutely no informational content, and 
+is purely for aesthetic purposes, then you leave Alternate Text blank. 
+
+Caption has to be removed to Move an Image.
+
+
+
 
 Adding an image gallery***********=====================
 ===================******************************
