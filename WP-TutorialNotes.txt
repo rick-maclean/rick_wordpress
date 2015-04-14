@@ -267,19 +267,87 @@ Alternate Text. The Alternate Text should, be a description of the image.
 That's the same as the title for the link. If the image has absolutely no informational content, and 
 is purely for aesthetic purposes, then you leave Alternate Text blank. 
 
-Caption has to be removed to Move an Image.
+Caption has to be removed to Move an Image. with drag and drop
 
 
 
 
 Adding an image gallery***********=====================
 ===================******************************
+ To get the images into my gallery, I first have to go to my post and edit it. So I click on Edit Post up here in the 
+ WordPress toolbar, and then I'll go to my post editor and find out where I want to place my gallery.
+ 
+  I'm simply going to click Add Media.  Up above the toolbar
+This shows which images are in the media library
+
+click on Create Gallery up in the left hand corner, and this opens a similar view, but now we're creating a 
+gallery directly. From here, I'm going to click Upload Files, and I can now click on Select Files to open a 
+folder, or I can simply go to the folder I have and select the images I want to add. I'll select a bunch of 
+these images and then simply drag and drop them into WordPress.
+
+A gallery is just for a particular POST and cannot seem to be used in various locations of the website.
+
+COPY GALLERY: 
+What's actually happening here is, we are adding a short code into the post. If I go to the text editor and scroll to 
+the bottom, you'll see the gallery actually consists of a short code that says Gallery IDs, and then gives the 
+IDs for each of the images.
+***** if you want to copy this gallery to a different page, or you want to move it somewhere within this page, 
+instead of going to the visual editor and trying to copy it that way, simply go to Text Editor, grab this 
+short code as it is, and just drag and drop it somewhere else within the post, or copy it and paste it into 
+another post or page. 
+
+ATTACHMENT PAGE NOTE:
+The first option, besides where each of the thumbnails points, because you are creating a grid of thumbnails 
+and you want those thumbnails to point to something, the default is the attachment page, which is what I'll 
+leave it at, but you can also choose to select Media File, which will link the thumbnail directly to the 
+original image. 
+Now, the attachment page is not something that's supported on every theme. You have to check to see if your theme 
+supports it, simply by linking to an attachment page and seeing what happens. If it's not supported, you have 
+to go back to Edit your Post, scroll down to the bottom and find your gallery, and go and edit the gallery, 
+and then change Linked To to Media File, update the gallery, update the post, view the post again, and now, 
+if you click on one of the images, you just jump 
+directly to that image file.
+Like I said, this is something you only want to use if you have a plugin that displays you images in 
+Lightbox, like Lightbox or ThickBox or FancyBox, because, if you don't have a plugin like that, you 
+get the experience you're currently seeing, where you're actually taken out of the site and you're just 
+looking at the image file on its own in your browser, and to get back to your site, you have to click on 
+this back button in the browser.
+
+
+The really neat thing about image galleries is that there are many plugins out there, like JetPack, 
+that will allow you to extend the functionality of galleries to maybe display them differently or add 
+other types of features, like slideshows and other things.
+
+
+
+
 
 Using Featured Image***********=====================
 ===================******************************
+there's a third way you can add images to your posts or pages within WordPress. It's called the 
+Featured Image option, or Post Thumbnail option. And it's actually a really cool feature that allows 
+you to associate one image from within your post or page with that page, so that it can be displayed 
+in index pages or other places on the site.
+
+Open a post in a separate tab.
+Add a featured image to the post 
+
+The featured image function is found at the bottom of your right-hand toolbar here under, Featured Image. 
+If you don't see it, go up to Screen Options and find Featured Image and toggle it on.
+To set a featured image, simply click on Set Featured Image. And this opens your media library. From here, 
+you can select any image you've uploaded to the site to use as the featured image.
+
+The theme decides where the featured image appears. In the case of the 2014 theme, the featured image 
+appears right here, above the title of the post. 
+
 
 Adding images from external sources***********=====================
 ===================******************************
+In addition to uploading your images to WordPress itself, you can place images and other media 
+content like audio and video from other sites into your posts and pages. This is because images and other 
+media elements are either replaced elements or embedded elements. They don't actually live on your page, 
+but are gathered in from a URL and placed there. 
+
 
 Adding media from YouTube and other services through oEmbed***********=====================
 ===================******************************
