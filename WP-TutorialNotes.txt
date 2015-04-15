@@ -348,25 +348,136 @@ content like audio and video from other sites into your posts and pages. This is
 media elements are either replaced elements or embedded elements. They don't actually live on your page, 
 but are gathered in from a URL and placed there. 
 
+Edit Post 
+Add Media 
+Insert From URL
+Right click image and select copy URL 
+Might need to state where the picture is from. in Caption 
+
+Note we can have it open in a new page so it will open up facebook.
+
+
+
 
 Adding media from YouTube and other services through oEmbed***********=====================
 ===================******************************
+The web is full of great content you can link to or pull into your site to add further usability and more 
+information. And WordPress ships with something called oEmbed that makes that really easy. oEmbed allows 
+you to pull content in from many reputable sources directly into the posts on your site and display that 
+content in an active format.
+
+eg YouTube 
+
+goto Post : Edit it : 
+Simply copy the URL of the YouTube and paste it in.
+
+
 
 Comparing and restoring old versions with Revisions***********=====================
 ===================******************************
+Anytime the current post is saved, WordPress also saves the previous versions of that post. That means, 
+at any time you can actually scroll back in time and look at previous versions of your post and figure 
+out exactly where you were and what it said at that time. When you look at the Publish box here on the 
+right-hand side, you see it says Revisions and the number 32. That means that WordPress has saved 32 
+different versions of this particular post.
+
+And I can go back in time and look at each of them, and even compare them to the current one to find out 
+if there's something I missed, or if I deleted something Or if I want to revert back to an earlier version 
+of the post. To see the revisions, I simply click the Browse button or I can to go Screen Options, activate 
+the Revisions tab, and then scroll down to the bottom and see a list of all my revisions with time stamps. 
+So, if I know exactly when I made the change, I can actually just jump right to that point.
+
+I'm going to click on the Browse button for revisions here, and this takes me to the Compare Revisions page.
+
+Drag the arrows on the bar to compare versions 
+Click checkbox for Compare any two revisions 
+Restore This Revision (will make a new copy of the revision so you can always go back)
+
+Pink and Green show what has changed (dark pink removed, dark green added)
+
+
 
 Publishing posts***********=====================
 ===================******************************
+Press Publish button 
+Press Save Draft  
+Press Preview 
+
+STATUS: can change it to Draft or Pending Review or Published 
+VISIBILITY:  pucblic (option Stick this post to the front page so can have it always be there.)
+             password protected (for this post) 
+             private (need password to get on site)
+
+PUBLISH ON:  edit when this post will appear. So it can be postponed 
+             can go back in time to put a post in a particular order (maybe I am talking about something in the past)	 
+**** can make it look like you have more content and activity
+This is also great if you are publishing a new blog and you want to show that you have a history of content, 
+you can backdate your content and you can also schedule future content so you don't have to always worry 
+about new content coming up.
+
+FUTURE DATE: Press the "Schedule Button"  to make it happen 
+
+
+
+
 
 Using the More tag and excerpts***********=====================
 ===================******************************
+dealing with really long Posts
+More...
+WordPress has something called the more tag, the more tag allows you to truncate posts on the index pages so that 
+they only display a short part of the content and then when you click on read more, you get the full article.
 
+Edit post : put More... tag anywhere I want (see in toolbar)
+---weird....it insert it at the bottom instead of cursor location 
+
+Continue Reading--->
+
+CUSTOM EXERPTS
+ Now, in addition to the More tag, you can also take things further by using a custom excerpt. But this 
+ only works on some themes. The current theme I'm using does not support custom excerpts, so it won't work, 
+ but I'll still show you how it works for other themes.
+ 
+ So if I again go into my post here, click on Edit Post and then go up to Screen Options, I can select an 
+ option called Excerpt. The Excerpt appears directly underneath my editor. And here I can place a custom 
+ excerpt, that's a short version of the content on my site. So instead of displaying, the first paragraph 
+ of the blog post, which might not make much sense, on its own, you can write a custom excerpt that explains 
+ exactly what's going on in this blog post. But like I said, not all themes support the custom excerpt, so 
+ for example, the current theme I'm using, Twenty Fourteen, does not display this information anywhere, so 
+ there's little point I'm putting it in.
+ 
+ 
+ 
 Defining post formats***********=====================
 ===================******************************
+It's not like categories in that you can define your post formats yourself. 
+WordPress ships with a set of predefined post formats that have to do with the actual format of your content.
 
+When you apply a post format the display of that post may change depending on what theme you're using. Some 
+themes support all post formats and dramatically change the behavior of posts with specific post formats, 
+other themes make only minor changes, and some themes don't support post formats at all.
 
+eg Create a simple post 
+SEE Format panel on the right 
+Aside 
+Image 
+Video 
+Quote 
+Link 
+Gallery 
+Status 
+Audio 
+Chat 
 
+This posts formats feature is extremely theme dependent. So, like I said earlier, depending on what theme 
+you're using, the way the post formats are displayed will change dramatically. 
 
+ If you want to see a theme that really utilizes post formats in a very cool way, you should go check out 
+ the Start With a Theme course for the 2013 theme which also ships the new version of WordPress because the 
+ 2013 theme really uses post formats extensively and changes the behavior of the content depending on what 
+ post format you choose.
+ 
+ 
 
 
 
