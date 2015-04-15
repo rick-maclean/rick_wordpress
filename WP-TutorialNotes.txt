@@ -573,16 +573,118 @@ in Pages this will show a dash before a child page
 
 Navigating the Dashboard index pages***********=====================
 ===================******************************
+Now that we've created some content for our WordPress site, it's time to look at how you can manage that content 
+using the WordPress Add Man panel. For each of the main types of content on your site, posts, media and pages, 
+and also for the comments, categories, and tags. You have index pages so you can see all the items at once and 
+make changes to them either in bulk or find the item you're looking for, and then make changes just to that one 
+item. Let's take a look at the all posts page to give you an example.
+
+eg POSTS:
+if you go to an established blog, you may have a 1,000 items. And you'll be able to scroll through all those 
+items on this page.
+
+If you are looking for a specific post you can also do a free text search here.
+And this free text search will allow you to search through all the posts on your site and find exactly what 
+your looking for. 
+
+
+ If you want to get more information about each post, you can change the display from the List view to a more 
+ expanded List view with this button up here in the right hand corner.
+
+ If you want to change what is displayed in this index, you can go to Screen Options. And here, you can 
+ toggle on and off all the different features. 
+  By default, there aren't all that many options, but when you start adding plugins to your site, chances are 
+  some of those plugins may add additional columns to this display
+  
+  Can change the number of POSTS displayed on each page. 
+   Let's say for example, you want to change the author of 200 posts and you have a total of 900 posts
+   We can set the number to 100 and then only have to do the changes 2 times.
+
+
 
 Using Quick Edit***********=====================
 ===================******************************
+The post and page editors inside WordPress, are powerful tools. But sometimes, they're a bit heavy-handed, 
+especially if you're only making small changes to the attributes surrounding posts or pages. For those 
+instances, you have the Quick Edit tools, which allow you edit the attributes to posts, pages, categories, 
+and other elements right from within the index page of that item.
+
+To be honest with you, I actually find it easier to make a post sticky from the quick editor than to go to 
+the full editor. Because as you'll remember, to make a post sticky from the full editor, you have to go the 
+Publish panel and then you have to open the Status option to get to that action. But here in the quick editor, 
+its readily available right in the editor. 
+
+There're many scenarios in which the Quick Editor becomes useful. For example, if you want to apply a new 
+category to a set of posts, you can simply go into the Quick Editor for those polls, and apply that new category.
+
+
+
 
 Using Bulk Edit***********=====================
 ===================******************************
+As you create more content and build out your WordPress site, chances are you'll run into situations where 
+you want to make changes to the attributes of several posts or pages. In those instances, you can use the 
+Bulk Edit option. The Bulk Edit option allows you make changes to the attributes of your content, like the 
+author, categories, tags, and whether or not people can comment on those posts. Of course, you can't make 
+bulk changes to the title or content. That wouldn't make any sense.
+
+go to Bulk Actions, and select Edit.
+When I click the Apply button, this opens the Bulk Editor for the posts I selected. I see a list of the posts 
+selected here, and if I made a mistake and selected a post I shouldn't be editing, I can remove it by clicking 
+the red X, and then I can make changes to all of these posts. Here, I can apply new categories, and that's 
+what I want to do, so I'm going to check the Philosophy category. I can also add additional tags, comma-separated 
+as before, and I can make changes to the overall attributes of all of these posts.
+
+Then I'm going to go to Bulk Actions and select Edit, click Apply, and this time I'm going to apply the 
+featured tag. So I'm just going to type in featured. This is not a tag that exist currently, but by applying 
+it here, it will be created. I click Update, and these three posts now have the featured tag. Now I can go back 
+to my front page and reload the front page, and something really neat happens. You see, any post that you have 
+on your site that has the tag, Featured, will be displayed in a Featured panel on the front page of your site, 
+if you're using the 2014 theme.
+
+
+
 
 Understanding how WordPress handles media content***********=====================
 ===================******************************
+it's important to remember that the media item itself always has an attachment page attached to it 
+and it's the attachment page that contains all the metadata, like the title, and the alternate text, 
+and description, and caption, and all this other information. So what you're looking at here is not actually 
+just the images, but the attachment pages for those images and the images are contained within the attachment pages.
 
+WordPress encompass much more than just images. You can also upload audio files, video files, documents, PDF files, 
+and pretty much whatever else you want. 
+
+An unattached media item is a media item that was not uploaded from a post or a page. That means it might 
+be an item that was uploaded by clicking on add new in the media library, or it might be an item that used 
+to be attached to a post, but then the post was deleted.
+
+ And this bring me to the search option. You'll remember at the very top of the course I said anytime you 
+ add content to WordPress whether that be a post, a page, or a media item it's important that you give that 
+ item a proper title.
+ 
+ All of this information is stored in the attachment page that also holds the image. And that means if I
+ click on view attachment page and open it in a separate tab, you'll see here we have that information. 
+ The title, the publishing time, the posts this item has been related to, and since I uploaded this through 
+ the media library it's only related to this attachment page.
+ 
+ So if you ever wonder what that description field is for this is what it's for. Every single media item you 
+ upload has an attachment page and on that attachment page you can add any information you want if you add 
+ it into the description field.
+ 
+This is also where any comments to the image will be stored, so if you want people to comment on a specific 
+image you simple target them at the attachment page and they will leave comments on the attachment page.
+
+Just remember that if you make changes to the title, or the alternate text, or the description those 
+changes will take effect on any posts where you originally added that image already.
+The only thing that doesn't carry over is the caption because the caption is post specific. 
+So if you add a caption into attachment details, that caption will only show up next time you add this 
+image into a new post or a new page.
+
+The last feature I want to show you in the media library is the both select option. Let's say you want 
+to delete a multitude of images at the same time. In that case you need to click both select first, and 
+then you can select the images you want to delete. Then you click on delete selected and the images will 
+be permanently deleted.
 
 
 
