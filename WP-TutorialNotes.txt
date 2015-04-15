@@ -1,3 +1,12 @@
+
+WordPress: Building Responsive Themes with Morten Rand-Hendriksen
+
+
+
+
+
+
+
 YouTube for setting up WordPress on XAMPP
 https://www.youtube.com/watch?v=Xo_Q3V1QSdg 
 
@@ -489,9 +498,45 @@ you're using, the way the post formats are displayed will change dramatically.
 
 Creating a basic page***********=====================
 ===================******************************
+POSTS vs PAGES 
+Pages are the static content that lives permanently on your site. Static pages are usually found either 
+in the main menu, or in the footer menu, and contain information that won't change very often.
+
+Things like, an about page, or a contact page, or a legal page. The thing to remember with pages is 
+that they will not appear in the regular stream of your content. 
+So you need to make an active link to it, either in the menu or in a widget area. 
+
+To create a new page, you can either go to the dashboard, hover over pages and select Add New, 
+or you can go to the Toolbar, hover over New and select Page.
+
+A page editor does not have categories and tags, that's because pages are stand alone objects. 
+They're not related to each other through categories and tags. Instead, they're related through 
+parent-child relationships, which we'll address later in the course.
+
+In place of categories and tags, you have this panel, the page attributes, 
+
+Create PAGE 
+Turn off Comments : Screen Options : Discussion (turn it off on this panel)
+
+
+The main difference of a page is not how you edit it or what you can put into it. It's how the content of 
+the page relates to the rest of the site. And we'll look at that further in the next couple of movies.
+
+
 
 Using page templates***********=====================
 ===================******************************
+Pages in WordPress have a unique ability that's not shared with posts. Pages carry with them custom 
+page templates so you can change the appearance of a page by applying a different template. 
+You find the custom page templates under Page Attributes in the Page Editor. Depending on what theme 
+you're using you'll have different custom page templates to use. Some themes don't have any templates 
+and some have a lot and figuring out exactly what those templates do require some experimentation.
+
+in 2014 we see Full Width Page template in the Page Attributes panel
+Let's see how this shows up by adding a side bar thing on the pages. 
+Apprearance : Widgets : Recent Posts widget --> ContentSideBar --> Add Widget 
+NOW if I choose "Full Width Page" for the new page it will not show this sidebar when that page is showing
+
 
 Organizing page hierarchy***********=====================
 ===================******************************
