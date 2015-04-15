@@ -538,10 +538,28 @@ Apprearance : Widgets : Recent Posts widget --> ContentSideBar --> Add Widget
 NOW if I choose "Full Width Page" for the new page it will not show this sidebar when that page is showing
 
 
+Page templates can also be used to create custom pages for your site. And there's a very good example of 
+that right here in the 2014 theme. To show you what I'm talking about I'm going to create a new page. 
+So I go to New and create a Page. And this time I'm just going to give the page a title. I'll call it 
+Contributors, then I'll go to my Templates and select Contributor Page. Note that I didn't put any content 
+in my Contributors Page. All I did was give it a title. I'll click Publish, jump back to the front page.
+
+I get a new menu item up here at the top called Contributors, and when I select it I jump to a page that 
+has information about the people that are contributing to my site. What you see here is a page template 
+that does something other than display a regular content page. In this case, it shows the thumbnail and 
+information, and a link to all the articles published by different people who contribute to this site. 
+So no matter what I put into this page, the actual page will only display this contributor information.
+
 Organizing page hierarchy***********=====================
 ===================******************************
+Make Contributors page to be child of About.
+Edit page and select parent to be About.
 
+NOTE: this puts Contributors under the About submenu 
 
+NOTE: you can do this recursively
+
+in Pages this will show a dash before a child page
 
 
 
