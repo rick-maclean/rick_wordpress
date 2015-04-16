@@ -698,18 +698,154 @@ be permanently deleted.
 
 Selecting and changing themes***********=====================
 ===================******************************
+All the content is contained in a database or in folders on your server and it's called forward and displayed 
+within what's known as a theme when a certain post or page is visited. As a result, you can change the theme 
+of your site without disturbing the content on that site.
+
+To change the theme of your site, from the front end, you can go to the WordPress Tool bar and select Themes. 
+Or, you can go to the Dashboard, go to Appearance, and then select Themes. Both of these take you to the Theme 
+selector page within the WordPress Admin Panel. Here you see the currently active theme highlighted. And then 
+you see the other themes you currently have available that are installed on your site.
+
+The rough difference between them is that 
+
+Twenty Fourteen is a theme that supposed to be a magazine style theme. It has feature content at the top that you 
+can switch between a grid pattern and a slider. And it has some other features that are popular in magazine 
+style themes. 
+
+Twenty Thirteen is a blogging theme focused mainly on bloggers, so it has one column layout and is very focused 
+on post formats. 
+
+Twenty Twelve theme is more of a content management system or CMS theme, and it's built in such a way that 
+it's easy to tinker with and change into what you want it to look like.
+
+From this theme panel, you can get more information about any of the themes you currently have installed. 
+Simply click on the thumbnail and you open a panel in WordPress that shows you all the information about both 
+the current them and and also the other themes you have installed.
+
+Directly from within this panel, I can now preview any of the other installed themes with my own content right 
+inside WordPress by simply clicking Live Preview.
+
+****Customize or Build Theme
+So if I like the Twenty Twelve theme, I can now either customize it, which we'll address in the next movie, 
+or I can simply click Save and Activate.
+And it also means that at any time, you can either find a new theme online that you want to use, or even 
+build your own themes to get the sites to look exactly the way you want to. All without having to worry about 
+re-configuring all your content in the process.
+
+
 
 Using the Theme Customizer***********=====================
 ===================******************************
+Wordpress ships with a feature called the theme customizer, and the theme customizer allows you to make changes 
+to your theme in real time and see how those changes affect your site before you make those changes public. 
+I want to show you the customizer, but I'm going to use the default theme called 2014 to do so. 
+
+GOTO Themes
+From where 
+I am right now, the easiest place is to simply click the large CUSTOMIZE button on the currently active theme.
+OR 
+....
+OR 
+If I'm on the front end of the site, I can also access the customizer. Here, I have to go to the site name, 
+hover over it, and then select customize
+
+And here, you'll see what I'm talking about when I say you get an instant preview of what this is going to look 
+like. If I change the site title to something else, you'll see that as I'm typing, we get an update in the page 
+right away. So you can actually see what your new text is going to look like. Same with the tagline.
+
+STANDARD THINGS 
+SIte Title & Taglline
+Colors
+Header Image
+Background Image 
+Widgets 
+Static Front Page 
+Featured Content (only in 2014) 
+
+ 
+
+
 
 Using a custom header image***********=====================
 ===================******************************
+can get at it from Customize.
+Can also get to it from Appearance : Header
+
 
 Creating custom menus***********=====================
 ===================******************************
+Second only to the content on your site, navigation is the most important thing you need to focus on when 
+creating any website, and in particular when you're using WordPress. 
+
+Now the you have more pages and more content on your site, it's time to take look at how to create custom 
+menus. Depending on your theme, you can add custom menus in many different places. There is always main menu 
+at the top of your site, and in some themes you have additional menus, either in sidebar or in the footer. 
+And you can also add menus in the form of widgets to sidebars and footers throughout your site. So let's 
+take a look at how to create a custom menu.
+
+Toolbar : Menus
+create main menu 
+can add items to the menu (on left) 
+  PAGES
+  Categories 
+  
+Can change order by drag and drop
+
+If I'm satisfied with this menu structure, I can now save my menu, and then go back to the front page, 
+and see that nothing changed. Well that's because I need to assign my new menu to the front page. Back 
+in the menu editor, we can scroll down, and under Menu Settings, you can see we have two theme locations 
+we can assign this menu to.
+ 
+Can select this from the Menu editor 
+Can also select locations under the Manage Locations tab. 
+
+The menu customizer is extremely powerful and allows you to create as many menus as you want. 
+One of the really cool things you can do is create additional menus that you can then use either 
+in your sidebars or in your footer. You can place these menus anywhere you want, as long as it's a 
+widgetized area. And later when we look at widgets I'll create just such a menu and place it either 
+in the left sidebar, the right sidebar, or in the footer of our site.
+
 
 Using widgets***********=====================
 ===================******************************
+One of the easiest ways of customizing your WordPress site is through the use of widgets. Widgets are small 
+blocks of content that you can add to widgetized areas usually found in sidebars or in the footers. And 
+different themes have widgetized areas that you can use. In the 2014 theme that I've been using through 
+this course, we have three widgetized areas. You have one here on the left-hand side that's always present. 
+You have another optional one on the right-hand side within the content area, and you have a third one in 
+the footer.
+
+When you first install WordPress, there is a set of default widgets that are automatically applied to the 
+main sidebar on your site.
+
+And in 2014, that main sidebar is here on the left-hand side. You can see the widgets in action. We have 
+Search, Recent Posts, Recent Comments, Archives, Categories, and Meta.
+This list of widgets is probably the first thing you'll want to change when you run your own WordPress 
+site because in most cases your theme has its own search function like 2014 has. Recent Posts may make 
+sense and Recent Comments too, but Archives, Categories, and Meta are usually not things you will find 
+in the main sidebar. 
+
+HOW TO?:
+just like with everything else on the front end in recent versions of WordPress, you can change the 
+widget setup using the Customizer directly.
+CUSTOMIZER:   see 
+Widgets 
+When I click on Widgets, the first thing you see is a breakdown of all the widgetized areas that 
+are available in my current theme. So depending on the theme you're using, you'll get a different list here.
+
+So let's start out by removing the ones we don't want. I'll drop down Search and click on Remove.
+This takes the widget away, and you'll see that updates right away in my preview too. So now I don't 
+have the Search widget anymore. Then I'll also remove Archives, Categories, and Meta. Now my sidebar is 
+much shorter and only displays the content I want. 
+
+Now you'll see Content sidebar closed, and footer widget area opened. The menu has now been placed inside 
+footer widget area, and the menu appears here at the bottom in the footer area. Now I can add another set 
+of widgets in my footer so I'll add in the Archives. I'll add in Categories, and I'll add in Recent Posts. 
+So as you can see, managing widgets from the Customizer is about as easy as it can get.
+
+
+
 
 Changing the front page from a blog view to a static page***********=====================
 ===================******************************
