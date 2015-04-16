@@ -862,15 +862,134 @@ So as you can see, managing widgets from the Customizer is about as easy as it c
 
 Changing the front page from a blog view to a static page***********=====================
 ===================******************************
+By default, the front page of your WordPress site is always the blog. Your most recently updated posts, 
+displayed in reverse chronological order in an index page. But sometimes, you may want to control the 
+front page and have a static page for the front page, and a link to the blog in your main menu instead. 
+WordPress allows you to do this, and it requires a couple of simple steps. The first thing you need to do 
+is create the page that's going to become your front page.
+
+1) create the front page 
+1b) turn off comments 
+2) Publish it 
+
+Now change the site in one of two ways
+1) I can either go to Settings and Reading, and from here change Front Page Displays from Your Latest Posts, 
+which is the blog page, to a static page. Now I can go to Front Page and select the page I just created, and 
+then click Save Changes.
+
+2) The problem is, now that I've created a front page, but I have not assigned a page to become my new 
+blog page, there's no way of getting to the blog. 
+For the blog to reappear on my site, I actually have to create a new page, that will hold the blog for me. 
+So I'm going to go back and create a new page, I'll call this one Blog. And I'm not going to put any content 
+here. Because the content is going to be replaced with the actual blog. I'll publish my new blog page. And 
+this time, I'm going to do the configuration using the Customizer. 
+
+So I'll go back to the front page, hover 
+over my site name, and select, Customize
+And here I will go down to Static Front Page and assign the posts page to this new page I created, 
+called Blog. You will notice here that these are the same settings you saw under Settings and 
+Reading in the admin panel. Now that I have created the post page called Blog, I can click Save 
+and Publish, close the Customizer, and then I also have to create a link pointing to that blog page. 
+
+So I'll go back to my menus, find the Main Header menu, find the blog page.
+Click Add to Menu, here it appears, pull it up to where I want it to appear. Click Save Menu. And go back 
+and look at the front page again. Now on the front page, I have my welcome message and my feature content. 
+And then, if I click on the blog link, I'm taken to my blog.
+
+So in a few simple steps, I turned my entire site on its head. Now we have a regular website with static 
+content on the front, and then we have a blog on the back end. If you want the site to be fully static, 
+you can even just remove the blog altogether and not write any blog posts, because now the only way to 
+get to the blog is by using this blog button.
+
+ What you see here, is the information for the theme on the left, and then you see a preview of the theme 
+ using the standard WordPress preview content. This preview content will show you exactly what all the different 
+ content you might use on your site will look like in this theme. So it's a good idea to scroll through here and 
+ make sure everything looks kind of the way you want to. If it does, and you're happy with your selection, click 
+ Install and WordPress will download the theme package, unpack it and then install the theme.
+
 
 Installing themes from the WordPress Theme Directory***********=====================
 ===================******************************
+ you can go to the WordPress.org Themes Directory. And here you see there are over 1,000 themes that you 
+ can download and install inside WordPress or you get WordPress to install automatically for you.
+
+So let's take a look at how you install themes from the themes directory, right from inside WordPress admin. 
+The theme installer is found under the theme section. You can get to it, either by going to your toolbar and 
+selecting Themes or by going to the admin panel to Appearance and into Themes.
+
+I'm going to install a theme that I've already seen previously that's called Superhero. So I'll just type 
+in superhero, and click search.
+
+Now what happens if you install a theme like this, and then you realize, nah, this is not the best theme, I want to 
+get rid of it.
+Well, you can just switch back. Go the toolbar and select Themes. You're taken back to the theme page. 
+From here you can now select one of your previous themes. I'm going to select 2014 again and then if you 
+don't want to have the superhero theme, you can click on the preview. Scroll down to the bottom here in the 
+right-hand corner and click Delete.
+
+
 
 Installing custom themes***********=====================
 ===================******************************
+In addition to installing free themes from the WordPress.org Theme Directory, you can also use the 
+WordPress Admin Panel to install custom themes that you've downloaded from different locations on the web. 
+You can even create your own themes, and then install them using the WordPress Theme Installer. For this to 
+work, you need to download the theme in a zip folder and then you can upload that zip folder directly to 
+WordPress. I've downloaded a theme that I want to install, but it's waiting on my desktop.
+
+So now I'm going to use the upload feature here, under install themes, to upload the file in and get that 
+theme installed. I will click Choose File and navigate to my desktop and here I will find the zip folder 
+for this current theme which is called Vantage. I will click Open and Install now and just like what happened 
+when I used the standard theme installer the theme is uploaded into my site unpacked and installed. Now, 
+I can click on Live Preview again to see what this theme looks like with my content.
+
+Now a word of caution when you find themes on the web that you want to install. Be very careful about 
+where you get those themes from. The Word Press theme directory is a heavily moderated directory where 
+someone actually tests every single theme, to make sure it works properly and that there's no nefarious 
+content in the theme, before it gets installed on your site.
+
+If you go out on the web, and you find a theme you like, you have to make sure that this theme is made 
+by a reputable developer before you install it. I've had seen cases where themes come pre-installed with 
+viruses and other hacks that make it difficult for you to run your site properly. You can also find themes 
+from premium theme foundries that sell themes or sell subscriptions to themes, and these are usually 
+perfectly safe. 
+
+
+
+
 
 Making sure your WordPress site is mobile-ready***********=====================
 ===================******************************
+Although you've probably been watching this course on your computer, chances are you also have a mobile 
+device, either a smartphone or tablet, or maybe both, and you use these to surf the Internet. 
+
+Well, when you create your site, you want to make sure the same thing happens on the front end of your 
+site. So if people visit your site using a mobile device, they don't have to scroll sideways to get to 
+your content. The content should reorganize to fit with smaller screens. It's very easy to test if this 
+happens with your current theme. All you have to do is go to your browser window, break it out and then 
+start reducing the width of the window. By doing this, you can see what happens as the window size decreases 
+and you can see that the content is reorganizing properly, and that it'll still be fully accessible to the 
+people who visit it.
+
+The 2014 theme does a very good job at this responsive resizing. And you'll notice that small things 
+happen. For example, the main menu breaks into a standard hamburger when you get to a certain point. 
+So, here the main menu now became a touch-friendly menu, because the screen size is small enough. 
+You'll also notice that things like the sidebar simply disappear, or get shifted to the very bottom 
+of the site. It's important when you choose a theme that you test for responsiveness and make sure 
+that the content that you think is important is positioned in places where people have an easy time 
+accessing them.
+
+In addition to picking a responsive theme, you can also choose to augment your site by using a plugin that 
+targets mobile phones specifically. There is one particular plugin that works exceptionally well at this. 
+It's called WPtouch.
+
+And if you're looking for a plugin just to support mobile devices, I strongly recommend you get this one. 
+There's a free version that you can download straight from the WordPress.org plugin directory, and later in 
+the course we'll talk about how you can do that. And if you choose to use this theme, I would urge you to buy 
+the Pro version. It gives you far more control, and it's also developed by some of the best developers in the 
+business. This mobile solution created specifically for WordPress will give your visitors the best mobile 
+experience possible.
+
 
 
 
