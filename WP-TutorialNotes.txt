@@ -12,21 +12,25 @@ https://www.youtube.com/watch?v=Xo_Q3V1QSdg
 
 1) install XAMPP
 2) download and unzip WordPress 
-3) create a database in localhost phpMyAdmin 
+3) create a database in localhost phpMyAdmin (I called it rick_wordpress) 
+      how to set password etc????
 4)edit wp-config-sample.php 
 can set the following 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+define('DB_NAME', 'rick_wordpress');
 
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+define('DB_PASSWORD', ''); //yes that is what I chose  initially it set it to nothing so it works on localhost
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
 
 save as wp-config.php 
 
@@ -45,6 +49,15 @@ http://localhost/wordpress/wp-admin/
 
 =================================================================================
 
+BACKUP RESTORE
+Using GIT for this
+make the WP folder a git repo
+in phpmyadmin    
+   1) select the DB 
+   2) export it into an sql file 
+   3) put it in the repo and push it OR  copy to thumb drive
+   4) on other machine create a DB in phpMyAdmin with utf8 (might need to delete the old copy first) 
+   5) import from the *.sql file
 ===================*****************************************=====================
 ===================*****************************************=====================
 Introduction
