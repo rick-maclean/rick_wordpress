@@ -1004,16 +1004,142 @@ experience possible.
 
 Installing plugins***********=====================
 ===================******************************
+Out of the box, Wordpress has lots of advanced features. And themes, like the 2014 theme, will add to those 
+features with additional functionality. But that's just the tip of the iceberg. Wordpress also allows you to 
+install what's called plugins. A plugins are small pieces of software that quite literally plug in to Wordpress 
+and add additional features. There are thousands of plugins available for Wordpress that do everything from add 
+simple sharing buttons on your site to turn your site into a fully functional e-commerce solution or even a 
+social network.
 
+WORDPRESS.ORG : Plugins
+
+To get an idea of just how many plugins are available, you can visit the Wordpress.org plugin directory. And 
+here you see there are currently over 28,000 available plugins that you can install for free on your site. 
+There are also thousands of plugins available that are for pay that can really expand what Wordpress can do 
+and turn it into something completely different from what you get out of the box. Installing and activating 
+plugins, is done pretty much the same way you installed and activated themes.
+
+Admin-Panel : PLUGINS 
+see Akismet and HelloDolly 
+Akismet filters the comments that come into your site to make sure you don't get spam comments on your site.
+You have to pay for it to activate it.
+
+HelloDolly is silly 
+ If I activate it, you'll see exactly what it does, and it's pretty silly. I activate it, and this plugin will 
+ add a line from the song "Hello Dolly", up in the top right-hand corner of your admin panels every time you 
+ reload the page, you'll get a new line from the song. 
+
+You install plugins into Wordpress and then you can activate or deactivate them from the Plugins panel and when 
+you activate them you add functionality to your site. 
+
+You can also install new plugins from the Wordpress Plugins directory, either by going to the main menu on 
+the left-hand side and selecting Plugins and Add New or if you're in the installed plugins page, by 
+clicking on the Add New button in the top, left-hand corner. This will take you to the new installed 
+plugins page. And from here, you can either upload a plugin, if you have one on your computer that you 
+want to add to your site, or you can browse through either featured plugins, popular plugins, the newest 
+available plugins, or your plugin favorites.
+
+The more important number is this one, last updated. Now that's not to say older plugins are not good, it's 
+just that in some cases you'll have plugins with severe security issues, that have never been updated or 
+have been abandoned. In that case, it's probably not a good idea to install older plugins. 
+
+eg 
+ And the practical example I'm going to give you is you want to create a contact page on your site that 
+ has a contact form. This is always a good idea because if you put your regular email address on your 
+ website, then all the bots on the web are going to go to your website, find your email address, and 
+ then just start spamming you like crazy.
+eg "Grunion contact form"
+search 
+install now 
+activate plugin
+NOTE: creates "Feedbacks" on the left hand sidebar 
+
+To understand what a plugin does, you really have to read the documentation and figure out how that specific 
+plugin works. But, like I said, in most cases, add a plugin, you add a feature, and you'll be able to see it 
+right away.
+
+ 
 Creating a contact page***********=====================
 ===================******************************
+Now lets use the Grunion plugin 
+
+Pages : AddNew : call it Contact : See small button AddCustomForm 
+
+next to the Add Media button. We now have a tiny little button that says, Add a Custom Form. And if I click 
+on that button, I get to a window that allows me to create a custom form.
+
+Now if I like the form:  Click the EmailNotifications tab
+
+In the case of Grunion Contact Forms, the contact form is actually a set of what's known as short codes. You 
+can see them here. They start with a square bracket and end with another square bracket. And these, combined, 
+will create that contact form. If you use a different plug-in, it may look completely different and some plug-ins 
+don't actually add anything into the code itself, but they do something else to the page to make things work. 
+Now that I have my contact form added to my contact page, I can click Publish. And go view the page, to see 
+my contact form in action.
+
+I'll be able to access this message from within WordPress admin. I can now go back to my dashboard. Navigate 
+down to that new button called Feedbacks. And here you see that submission that came from the website.
+
+Add Contact page to main menu
+
+
 
 Adding social media sharing buttons with AddThis***********=====================
 ===================******************************
+Plugins are generally installed to add popular, or useful features that are not shipped with WordPress 
+out of the box. One such example is Contact Forms which we just added using the Grunion Contact form plugin. 
+Another is Sharing buttons for social media. Adding sharing buttons for social media to your posts, and 
+pages can be extremely valuable, because more, and more people are using social media to share their content. 
+So adding these buttons at the top or bottom, or both of your posts and pages will allow people to share 
+your content directly with their friends or their networks and this will produce more visits to your site.
+
+Just like the contact forms there are hundreds of different plugins that add sharing buttons. The one I 
+personally like the most is called, Add This. So that's what I'm going to install. To install the plugin, 
+I go again to Plugins and Add New. 
+
+And the plugin I'm looking for is this first one, called Share Buttons by AddThis.
+This does not exist soooooo get 
+ShareThis: Share Buttons and Social Analytics (by The ShateThis Team) 
+NOW see it under Settings option on the left ShareThis 
+
+ALSO you can do www.addthis.com  to sign up for an account to get statistics on your account (it is FREE)
+
+Now in tool select small buttons
+
+
+There's a lot of new things you can do with the AddThis Share plugin and it serves as a very good example of 
+how plugins work.
+You've installed them into your site, add some functionality. Then you start experimenting with it to see 
+what it does and you find a situation that either works for you or doesn't work for you. So here's my advice 
+to you. If you're looking for a feature, and you can't find it in WordPress, chances are someone has made a 
+plug-in to solve your problem. So go to the Plug-in Directory and search for a plug-in that does roughly what 
+you want.
+
+
+
+
+
+
 
 Learn more about plugins***********=====================
 ===================******************************
+Now that you know how to find, install, and configure plugins I know your itching to go out and find lots 
+of great plugins and add them to your site. So I'm going to give you a word of caution here. Try to be 
+careful about how many plugins you install in your site. Chances are you'll install multiple different 
+plugins who do roughly the same thing, and they might be overwriting each other and creating problems 
+on your site. And each plugin you add to your site will also slow down the performance of your site. 
+Generally, you don't want to have more than maybe 10 or 15 plugins max activated on your site at once.
 
+And you also don't want to have plugins on your site that are installed but not activated, because they 
+take up resources. Now, I know finding plugins and figuring out how to use them properly can be a real 
+challenge, because there are so many plugins out there, and there are so many different plugins that do 
+the same thing. To help you along the way, I'm in the process of creating a new series of courses here 
+at lynda.com called WordPress Plugins, where we address individual use case scenarios. The first course 
+in this series, WordPress Plugins SEO, is already out, and it show you how you can use different 
+
+SEO plugins 
+
+to improve both search engine optimization and also how your content is shared on social networks.
 
 
 
