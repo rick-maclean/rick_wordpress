@@ -1434,10 +1434,152 @@ Akismet is something like 98.2% accurate, so sometimes it will catch things that
 
 Understanding how WordPress works***********=====================
 ===================******************************
+When you own or operate a website running WordPress, it's important that you understand how WordPress actually works. 
+It's one thing to understand how you can use the web interface of WordPress to manage content. But it's 
+also important to understand the inner workings of WordPress, itself. Both how the application works, and 
+also how it communicates with a database and other files. What you see here on the screen, is WordPress. 
+On the left hand side is the application itself. It consists of a series of files that usually are prefixed 
+with WP dash, and then something, and then three main folders; WP-Admin, WP-Content, and WP-Include.
+
+On the right hand side, you have the WordPress database. Now, when I set up my WordPress installation on this 
+computer, I used wp underscore as the prefix for my database tables. If you changed your database tables to 
+something else, you'll see that prefix instead. So when you access WordPress on your server, you're actually 
+running this piece of software that you see here on the right hand side. The software has several different 
+components. It's the main application, and within the main application you have an Admin panel.
+
+You have all your content, which includes your Plug Ins, your Themes, your Upgrades, and also, any uploads. So, 
+all the images that you sent up to your site are stored here. And, there's a configuration file named WP-config,
+that helps Word Press talk to the database. The database has different tables for the different types of content 
+you have inside your WordPress site. You have Comments and Comment meta data. You have Links. You have Options. 
+You have Posts and Post meta data.
+
+You have taxonomy, that would be the categories and tags. You have Users and User meta and so on. So any time 
+you make a change, either inside WordPress Admin, or you create something new, like a new Post or Page, all 
+that information is sent into this database. Now that you see there's a clear separation here between 
+WordPress, the application, and the database that contains all of your settings and information. It 
+should become clear that WordPress itself has nothing to do with the information you enter into Wordpress.
+
+That also means, if something goes wrong with WordPress, if it stops working properly or if an update 
+crashes, you can actually just remove the application and then just replace it with a newer version, 
+and it'll come back up again. The only thing within WordPress, this set of files that you need to 
+keep. Is the WP config files which is the configuration file that helps you talk to the data base 
+and the WP content folder which contains all your uploads, themes, and plugins. Right now lets take 
+a closer look at the WP config file.
+
+'Kay so this the file that helps WordPress talk to the database. The wp-config file is the only file 
+within WordPress, the application, that you have to set up to get WordPress to work. Now if you used 
+the five minute install that comes with WordPress, WordPress itself would create this file for you, 
+but in some cases you have to configure it on your own. If something were to go wrong with your WordPress 
+site, or you need to do a hard update, or you need to take over management of a WordPress site you didn't 
+set up, it's always a good idea to go into the WPconfig file, and find out how it's set up.
+
+Here you see there isn't all that much information. What matters is the top here, where you have your MySQL 
+settings, here you have your database name. Your database username and password, and also the database host 
+name. Further down, you have your KEYS and SALTS. So I haven't installed these here because this site is 
+running locally on my computer. But normally you would have authentication keys here, that make it harder 
+for hackers to get into your site. If you don't have the authentication keys you can go to the URL that's 
+provided right here in the WP config file and that URL will automatically create randomized keys for you 
+that you can just paste in here in place of what you already see.
+
+Scrolling down, there's a couple of extra interesting tidbits, here you have the Table prefix, when you 
+set up WordPress, you define a Table prefix. But you can also define it here within the config file 
+just remember that once you define the Table prefix, you can't change it, if you do that, then 
+WordPress won't be able to find the Table from the database. You can also define a localized 
+language for WordPress. By default, it's set to English, but here you can change it to another 
+language if you want. And for developers, this is where you find the WP_DEBUG feature.
+
+By default it's set to false, but in some cases you may want to debug either a Theme or a Plugin, 
+or find out why something is going wrong. And in that case you can go in here change the WP debug 
+feature to True and then you'll have debugging within WordPress itself. The chances of you having 
+to work with a WP config file are small, but, if you have to work with the file, here you can see, 
+that it's not all that complicated. Just like with everything else in WordPress, everything is spelled 
+out very clearly, all the functions are semantic and easy to understand, and whenever there's something 
+complex, there's comments within the file itself to explain to you what is needed and how this usually 
+works.
+
+So now that you understand how WordPress works, we'll take a look at how we can use that knowledge to 
+figure components within WordPress.
+
 
 Back-end management of themes, plugins, and other assets***********=====================
 ===================******************************
+In the previous movie, I mentioned that the wp-content folder within your WordPress installation is 
+where you find your plugins, your themes, and also your uploads. Now we're 
+going to use that knowledge to manage some of the content on our site directly from the site's back end, 
+right here inside WordPress itself. Now, just to avoid any confusion. What you're seeing here is my local 
+install of WordPress. I installed WordPress on my computer using the application called Whamp.
 
+In a normal circumstance, you'll be working with WordPress running on a live server somewhere on the web. 
+In that case, to manage these files, you need to access the files either through a web portal provided by 
+your hosting provider, or through a FTP application. You'll see the exact same files availabile in the server. 
+It's just that for simplicity, I'm using my local install to demonstrate. Looking at my WordPress install, 
+I can go to My Themes. And here you see I have four themes installed: 2014, 2013, 2012, and also this vintage 
+theme I installed manually.
+
+If I go to my WP Content folder, and Themes. You'll see here we have a folder for each of the themes: 2014, 
+2013, 2012, and vantage. And if I go into each of these folders, you'll see here all the theme files. For each 
+theme, you'll find a file called style.css. This is the stylesheet for the entire theme. You'll also find various 
+template files like archive, index, Single, and page.
+
+And depending on the theme you're using, you may also find additional template files, style sheets, images and 
+scripts. When you install a theme from the WordPress installer, all that happens is WordPress downloads the 
+theme as a ZIP folder. And then unpacks it within this Themes folder. So to add a new theme, all you have to 
+do is just place the theme inside this folder and it will magically appear. Let me show you exactly how that 
+works. I'm going to go to the WordPress theme's directory and from here I'm going to download a random theme.
+
+So I'll find this Destro theme here and I'll just download it on to my computer. The theme gets downloaded, 
+and here I'm going to open the zipped folder. So here we have the zipped folder with that theme inside. Just 
+to show you I'm not cheating, I'm going to reload my themes page here, you see I currently have four themes. 
+Now I'll open my local install of WordPress, I'm inside the Themes folder. Then I'll go and grab the destro 
+folder and just dump it into the themes folder. All I did was place the destro folder into the themes folder. 
+Nothing else. Now I'll go back to WordPress and reload the themes page, and destro appears.
+
+Now I can live preview my site using this theme. And I can save and activate it if I want to. Likewise if 
+I want to get rid of that theme and I don't want to use the Delete function from within WordPress. I can 
+just go back to my themes folder, select the the Destro theme and delete it. And when I reload my themes page 
+again It's gone. The exact same thing happens with plugins. Here I can go to plugins and see what plugins 
+are installed. Add this social bookmarking widget, Akismet, Grunion Contact Form, and Hello Dolly.
+
+Going to my WP content folder, and plugins, you see Add this Akismit Grunion contact form and a file called 
+Hello and this Hello Dolly. Just like with themes, I can now go to the plugins directory download any plugin 
+I want. And simply drop the plug-in files into the plug-ins folder and that plug-in will magically appear 
+inside WordPress. Complete separation between application and individual plug-ins and themes. Now, WP 
+content folder also contains my images.
+
+If I go to uploads, you'll see I have a folder for 2013. And then for one for 12, because it's currently 
+December. And then within that month, I have all the images I've uploaded to my site. And here you see 
+what I talked about earlier in the course. I said that when you upload an image to WordPress, WordPress 
+will make a series of different sizes of that image for you to use. So when I uploaded this A1 image, 
+WordPress made a thumbnail size, that is A1, 150 by 150. And notice how the file name actually contains 
+the size? 150 by 150, it also made a 300 by 200 version of the image.
+
+A 672 by 372 version and a 1024 by 576 version. Now you probably know that inside WordPress we only 
+have three sizes defined, that is thumbnail, medium and large. So why is their a third size? This 
+third size is created by WordPress to be used as the featured image. Because our current theme 2014 
+requires specific sizes for the featured image. So WordPress made that specific size. You'll notice 
+that all my images, the apple's image also has a 672 by 372 image.
+
+The same goes for camera. And so on. This is important to know because if you switch themes, these 
+image sizes may not fit with the current theme you're using. In that case, you'll need to install a 
+plug in. Called Regenerate Thumbnails. So, I'll install this plugin manually just to show you how 
+this works. I find the plugin, it's made by Alex Milts. I'm going to download this plugin, just 
+like I did with a theme, open the folder, here it is. And then, I'll go to wp content > Plugins.
+
+Grab my Regenerate Thumbnails plugin and dump it into WordPress. And now, when I go back to my plugins 
+page and reload it, I have the regenerate thumbnails plugin. I can now activate it and then run the 
+function. The function can be found under Tools and regenerate thumbnails. Or you can apply it to 
+individuals images through the media manager. Now I haven't activated a new theme so if I run this, 
+nothing's going to happen. But, when you run that function, you'll see new images appear inside uploads here.
+
+And, if you're unsure of whether or not the function worked. You can go into uploads and manually check 
+to see if those images have been resized or not. Knowing that this folder contains your plugins, your 
+themes and your uploads. Also tells you that any time you want to do something dramatic to WordPress 
+like delete the entire application or even move your site from one location to another. This is the 
+folder you need to be concerned about because the w p content folder Contains the elements that you've 
+customized on your site.
+
+So all you really need to worry about when migrating WordPress or when resetting WordPress; is the wp 
+content folder, the wp config file and your database. Everything else is replaceble
 
 
 
