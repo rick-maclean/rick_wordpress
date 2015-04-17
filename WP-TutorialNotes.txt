@@ -1144,6 +1144,11 @@ to improve both search engine optimization and also how your content is shared o
 
 
 
+
+
+
+
+
 ===================*****************************************=====================
 ===================*****************************************=====================
 8. Profiles, Users, and Settings
@@ -1152,18 +1157,152 @@ to improve both search engine optimization and also how your content is shared o
 
 Editing your user profile***********=====================
 ===================******************************
+When you started using WordPress, a user account was created in your name. That user account has two purposes. 
+On the private side, it allows you to customize the experience of using the WordPress Admin panel. On the 
+public side, it allows you to share information about yourself to the readers who visit your site. So now 
+let's take a look at the settings you have for your user profile. You can get to your user profile either 
+by going to your Name, up in the right hand corner and selecting Edit My Profile.
 
 Creating a Gravatar profile***********=====================
 ===================******************************
+And if I make a comment on a post within the site, you'll also see my face show up in the comments. This all 
+works because of a system called Gravatar that was created by the same people that created WordPress.
+
+Gravatar allows you to create one avatar online that you associate with your email address, and then any 
+time you make a comment or do something else with a site that has Gravatar activated, that profile photo 
+will appear next to your name. So if you want your profile photo to appear next to your name within your 
+user profile and also when you make comments on your own site, and other WordPress sites and other sites 
+on the web, you need to set up a Gravatar profile.
+
+gravatar.com
+
+
 
 Adding and managing users***********=====================
 ===================******************************
+Now that you've set up your own profile in your WordPress site, you may want to invite some other people 
+to contribute, or administer the site as well. There's several reasons why you may want to do this. You 
+may be working in a team, and multiple people should have access to the site, or you may want to invite 
+someone in to contribute to the site, so you don't have to write all your content. There's also situations 
+where you want to let the public register for your site, so they can get access to locked information, or 
+can store their own information and interact with people through the site itself.
+
+ANYONE CAN REGISTER 
+Now earlier, I mentioned, that in some cases, you may want to let the general public register to your site. 
+If you want to enable that function, you need to go to 
+Settings. 
+In General 
+and here you 
+find a box called Membership. 
+If you check this box, then anyone can register on your site. If you let people register, 
+you also need to give them a new role.
+
+
+To delete a user, simply hover over their name, and click Delete. Now you may wonder what happens if that 
+user's already created posts. Well, you can see it right here, if the user has created and published posts 
+on your site, WordPress will need to attribute those posts to an existing user that is not being deleted. 
+Here you have 2 options. You can either choose to delete all the posts that this user created, or, you can 
+attribute all the posts to a separate user in your site. This is very important because all posts created 
+under WordPress need to have a user assigned to them.
+
+
+
+
 
 Understanding user levels***********=====================
 ===================******************************
 
+By default, WordPress has five different role levels, subscriber, contributor, author, editor, and administrator. 
+
+subscriber
+is the lowest level of user. This is a person who can access everything on the front end 
+of the site, and can also access their own user profile.
+The only purpose of having subscribers if you a, want them to subscribe to your site. B want them to be able to 
+comment on your site if you restrict comments only to subscribers. And c, want them to see post or pages 
+that are published privately. Remember that setting under publish, where it said private. Well if you set 
+it to private, only subscribers and above can see that content. 
+
+contributor 
+--can create content for your site and submit that content for review.
+--The contributor can see her own content and edit that content as long as it has not been published,
+--don't have the capability of uploading media items. That's because the contributor can only contribute text. 
+--cannot publish it 
+
+athour 
+can create and publish her own content, but she can not edit anyone elses content. 
+
+editor 
+can create and publish her own content, and edit other peoples content and publish that content. 
+
+administrator 
+can control every feature of the site.
+
+
+SECURITY NOTE 
+In most cases, I only give one or two people administrator access to a WordPress site, and I often even 
+create a separate administrator account for them, so when they publish content, They do it either as 
+authors or as editors instead. That way if someone somehow manages to get a hold of their account information 
+they'll only be only to edit contents, they won't be able to administer the site as a whole.
+
+
+
+
+
+
+
 Configuring general settings***********=====================
 ===================******************************
+In addition to changing the settings for your own profile and the profiles of the other people you let, use 
+your WordPress installation. We can change the settings for WordPress itself. This is done under the Settings 
+option in general. 
+
+Time Zone etc etc 
+
+Writing 
+  set Default Post Category
+
+  This Press This option is actually a bookmark that you can add to your toolbar in 
+  your browser. And that way, if you find something interesting online, you can simply 
+  click the Press This button, and it'll allow you to push that content directly to your 
+  blog right away. This is a custom option for people who blog a lot.
+  
+  If your out travelling or your not able to access the WordPress interface for some 
+  reason you can set this up so that you can email yourself and then that email becomes 
+  a post on your site. This requires that you wire your email server to WordPress and 
+  this requires a bit of a set up to make it work. But, once it works, it actually works 
+  quite well. So you'll be able to email your site and automatically get updates on the 
+  front page. 
+  
+Reading (search engines)
+Now that I'm ready to take my site live, I can change these settings so that my site becomes 
+visible for search engines. So I'm going to click on this link that goes to visibility settings. 
+And this takes me to the Reading panel. Here at the bottom, you see that currently search engine 
+visibility is set to discourage search engines from indexing the site. Now that I want to take my 
+site live, I'm going to uncheck that and that way search engines will be able to access my site and 
+will be able to index the content.
+
+Set For each article in a feed, show  (Summary)
+
+
+IN WRITING
+I'll click Save Changes and then I can go back to my Writing Settings. Now at the bottom here, you'll 
+see I'll be able to add update services to my site. These are services that will be notified every time 
+I make a change to my site. By default, the only you service have is this, pingomatic service, but you 
+can add additional services if you want to. I usually add all the available update services that are 
+suggested in the codex by following this link. I'll open it in a separate tab here, scrolling down and 
+simply copying out this whole list.
+
+So I'll copy the list. And just paste it in. And now, whenever I make an update to my site, be that 
+a new post or a new page or a new comment comes in, all of these different services will be notified 
+of this new content. And this will encourage some search engines to index my site better.
+
+
+
+
+
+
+  
+  
 
 
 
