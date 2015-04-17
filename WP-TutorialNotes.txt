@@ -1300,15 +1300,6 @@ of this new content. And this will encourage some search engines to index my sit
 
 
 
-
-  
-  
-
-
-
-
-
-
 ===================*****************************************=====================
 ===================*****************************************=====================
 9. Getting Readers
@@ -1317,12 +1308,118 @@ of this new content. And this will encourage some search engines to index my sit
 
 Creating user-friendly permalinks***********=====================
 ===================******************************
+URL's that are easy to read 
+eg URL is http://mor10.com/wordpress-3-8-post-roundup
+
+Our site has for example:   http://localhost/wordpress/?p=61 
+Let's configure this.
+
+Admin Panel
+Settings : Permalink Settings 
+eg date, post name, etc.
+SELECT  Post Name
+
+
+NOTE:
+If you are on a windows computer and you are using wamp, you can activate the service by clicking on the 
+Wamp icon, selecting Apache, Apache Modules, and scroll down until you find this module, called rewrite_module. 
+If rewrite_module is turned off, your rewrites of the URL will not work, so this might be the problem, but 
+if you're working on a live website, chances are your host will have rewrite activated and you change your 
+URL structure.
+
 
 Configuring comment settings***********=====================
 ===================******************************
+When you visit a post on a WordPress-powered site, chances are you can scroll to the bottom, and find 
+the Comment section. And, this Comment section is what has made WordPress and software like Wordpress, 
+so popular and prevalent on the Web. The comment section turns your one way communication of ideas into 
+a true idea exchange. A conversation where you can talk to the people who visit your site and they can 
+respond to you, and you can have a conversation between them, or they can have a conversation with other 
+visitors.
+
+ Just like with email, the comment section on WordPress sites has become a great place for spammers to 
+ place tons of links to other content and generate interest to sites you may not want to interact with 
+ at all. So, if you allow comments on your site you have to make sure you got the settings right, so 
+ people can't abuse your site and use it for their own personal gain.
+ 
+ Admin-Panel : Settings : Discussion 
+ Under Default Article Settings, 
+Turn  
+Attempt to notify any blogs linked to from this article  --> off. 
+Allow Link Notifications From Other Blogs  --> off
+
+Possible
+You may also want to force the user to register and logged in to comment. 
+ 
+ Automatically close comments on articles older than  days   set....to 365 days
+
+A comment is held for moderation set off
+ If you have a site that has hundreds of comments on one post, you may want to limit it, so it doesn't take 
+ forever to load a single page. Next, you get to the email section. Here you can get WordPress to email you 
+ anytime someone posts a comment, and also, anytime a comment is held for moderation. If you don't activate 
+ Akismet, and you leave a comment is held for moderation on, you're going to get hundreds of emails. So, I 
+ recommend first of all, to enable Akismet so you don't get all the spam.
+ 
+E-mail me whenever:
+So, if your getting a lot of email from your site about comments chances are you need to change these two 
+settings or change the security of your comments section. 
+ 
+Comment must be manually approved  (we might want this ON)
+*** Comment author must have a previously approved comment*** SPAM
+The next option, Comment author must have a previously approved comment, allows you to kind of 
+screen people the first time they comment. And this is usually left on. Now, here's an important 
+thing. When you activate your site, if you leave this option on, you'll notice that you'll get a 
+lot of comments that seem extremely vague. They'll say something like. I found this article on the 
+web, and I thought the topic was interesting. Great work. Or, they'll say, I visited this article 
+using my mobile device, and it spanned across the screen, so I had to scroll a lot.
+
+There might be something wrong. This is a phishing e-mail that's trying to get you to approve it. 
+So that they can start spamming your blog. So, anytime you see extremely vague comment, make sure 
+to not approve it. because otherwise your blog will get attacked with lots of spam.
+
+To avoid getting a lot of garbage comments on your site, I recommend using this Comment Moderation 
+and Comment Blacklist feature quite a lot.
+
+You can also add IP address specific URL's or specific email addresses in here 1 per line and 
+those will automatically get filtered. 
+
+
+LAST SECTION
+The final section has to do with how comments are displayed. By default, whenever someone leaves a 
+comment, an avatar is shown next to their comment.
+
+If they have an email address associated with a Gravatar, and they use that email address when they 
+comment, their Gravatar will appear. If they don't have that, you'll see one of these default avatars 
+instead. And here you can choose either the Mystery Man, or Blank, or a Gravatar Logo or one of these other logos.
+
+I generally leave this on G, because I have yet to find anyone who has a Gravatar that's over G, 
+
 
 Managing comments***********=====================
 ===================******************************
+When you publish you site live to the web, and it starts gaining some traction and attention, 
+you're likely to start getting comments to your blog posts. When comments start coming in, it's 
+important to moderate them and also to respond to them so you can keep the conversation going. 
+When you log into your site, you'll often notice that up here in the toolbar, you'll have a flag 
+that says there are comments awaiting moderation. Right now, I have three comments awaiting moderation. 
+So I can click on that link to go directly to my comment section.
+
+When you get comments, it's important to actually read them so you understand what is showing up on 
+your site. Because sometimes spammers are pretty clever, and they'll write comments that sound like 
+they're real comments but they're really not. So here I'm going to read through the comments that 
+I've received on my site. You can see here, this comment says, I agree, John, this article is fantastic, 
+here are some links to photo websites I visit all the time, do you visit them? And then there is a series 
+of links.
+
+I'm going to jump to that post. And here in the comment editor when I scroll down you'll see here 
+we can also see the comments but this time only for this post and here like in the columns window I 
+can edit any of the columns.
+
+Now, if you have Akismet activated, the spam folder will very quickly fill up with lots of 
+comments, and you should do a quick run over them just to make sure that they are, in fact, all spam.
+Akismet is something like 98.2% accurate, so sometimes it will catch things that aren't spam. 
+
+
 
 
 
