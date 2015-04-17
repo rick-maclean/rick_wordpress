@@ -1,10 +1,11 @@
 
 WordPress: Building Responsive Themes with Morten Rand-Hendriksen
 
+https://www.youtube.com/watch?v=U2gwK8EYzLE  buidling a Theme with Photoshop
 
+https://www.youtube.com/watch?v=uwecNcdAUaY  making a WordPress Theme with NetBeans
 
-
-
+https://www.youtube.com/watch?v=Dv6xvcB_fV8   looks like a good one maybe 
 
 
 YouTube for setting up WordPress on XAMPP
@@ -1592,13 +1593,196 @@ content folder, the wp config file and your database. Everything else is replace
 
 Keeping up to date***********=====================
 ===================******************************
+When you own or manage a WordPress site, it's your job to make sure that your installation of WordPress, 
+and your plug-ins and themes are always up to date. This is important for several reasons. WordPress is in 
+constant development and new features are added all the time, and keeping your installation up to date, means 
+that you'll always be on the cutting edge of what's happening with WordPress. There's also legitimate concerns 
+if you don't update. WordPress is ubiquitous on the web, and hackers who want to get into sites, are likely 
+going to target WordPress sites first, simply because there's so many of them.
+
+see Dashboard : Updates 
+
+You may see that the update stalls half-way through, or something else doesn't work. If that happens, 
+you don't really have to worry. Because the actual update happens at the very end of the process. So 
+if the process stalls somewhere in the middle, nothing'll happen.
+
+ To make things a little bit easier for you, a new feature was introduced with WordPress 3.7 
+ called point release auto-update.
+So what happens now is, whenever a point release is released for WordPress meaning, WordPress 
+3.8.1 or .2 or .3, WordPress will actually automatically update itself. So, you don't have to worry 
+about keeping up to date with these security releases that come out, so all the point releases, are 
+security releases and you don't have to worry about them anymore. In fact, this happens automatically, 
+whenever that release comes out, and when it does, you'll get an email from your site saying, first, hey 
+I'm upgrading to the new version and second, upgrade complete.
+
+However, you still have to do manual updates for your plugins, and your themes. So whenever you see an 
+alert up here in the corner, with that big recycle sign on it, go to Dashboard and Updates, and make 
+sure that everything on this list gets updated.
+
+
+
 
 Must-have security plugins***********=====================
 ===================******************************
+Because WordPress is such a popular content management system, it's also become the primary 
+target for people with nefarious intent online. Hackers target WordPress first when they try 
+to find vulnerable sites, and spammers also want to use WordPress to generate links and spam 
+to other sites. To help prevent your site from becoming a target, I have some plugins I want you to 
+install to secure your site and also secure your data. 
+
+plugins 
+Limit Login Attempts
+
+To make it even harder for someone to hack in your site you can also add in the 
+Google authenticator plugin. 
+This might seem like a bit of a hassle because now you have to have your smartphone around every time you 
+want to log into your site, but it adds an almost uncrackable code to your site that makes it impossible 
+for people to log in, unless they have your username, your password, and your smartphone. 
+
+wordpress-seo
+Whenever you run a site online, it's very important that you link that site to Google Webmaster Tools and 
+Bing Webmaster Tools. So that if something goes wrong with your site, either there's some content on 
+your site that shouldn't be there or something is going wrong in the indexing of the site, you're alerted 
+right away.
+
+The plugin I'm going to recommend is an SEO plugin. But, I'm recommending it, because it provides you with 
+direct links to all of these webmaster tools. So you need to go to Google webmaster tools, and Bing 
+webmaster tools, and set up an account. When you set up the account, you can register your site. And 
+those services will give you custom links that you can then place inside WordPress SEO by Yoast and 
+your site will be linked to those services. And that way you'll see what's going on with your site, 
+and if something were to happen to your site, the webmaster tools will tell you immediately and also 
+help you solve the problems.
+
+backupwpup
+To automate the back up process, and make it as easy as possible, you can use a plugin, like BackWPup Free. 
+Which allows you to back up your WordPress site to either Dropbox or S3, or Box, or even an FTP account, or 
+even better you can buy a service like VaultPress.
+
+Finally, to control the volume of spam comments you get on your site, I urge you to install Akismet. Akismet 
+is a for-pay service that monitors the spam on your website. Now, what exactly you end up paying for it 
+depends on what type of site you have. If you have a personal blog, and you don't have any ads and you're 
+not earning any money from it, then you can get a personal account, and you don't have to pay anything.
+
+But, if you're earning money from your blog, then quite frankly you should be paying for it because 
+you're using this professional service, to monitor the spam on your account. How much you pay depends 
+on how much you use your blog, and how much spam you get. 
+
+
 
 Troubleshooting a site crash***********=====================
 ===================******************************
+When I was learning how to drive, my driving instructor told me the best way to learn how to handle 
+difficult situations, is by experiencing them in a controlled environment. That way you can learn how 
+you will react to the situation, and also figure out how to solve it, in a controlled environment. So if 
+you ever experience this in real life, you'll know what to do. I'm going to take you through the exact 
+journey with WordPress. There are a couple of situations you may encounter. It's rare, but it is possible. 
+That would bring your site down.
 
+And, in those cases, it's important to know what's happening and what you can do to fix it. So I'm going 
+to walk you through a couple of scenarios here in real time, so you can see both how WordPress crashes 
+and what you can do to solve the problem. So that if this ever occurs to you, you know exactly what to 
+do. Most crashes in WordPress are caused by one of three things. Either a broken or improperly coded 
+plug-in, a broken or improperly coded theme, or a broken upgrade to WordPress. Depending on the severity 
+of the error, you might get anything from an error message within the Admin panel, or on the front end 
+of your site, to a completely broken site that displays just as a white screen.
+
+In the case of the white screen, also known as the white screen of death you won't even be able to log 
+into your site to do anything about it. And it is the most terrifying thing that can happen to your site. 
+To get an idea of the severity of this problem, you'll see if you go to Google and search for WordPress 
+white screen you get a mere 39.8 million results. And the WordPress support home has it's own section 
+just for white screen of death. Now to save you the trouble, both of having to experience this on your 
+own and also on having to find out how to solve it, I'm going to walk you through that process by 
+crashing my own site.
+
+Let's start with broken plug-ins and themes. I've created a broken plug-in and installed it on my site 
+here. You'll find it in my plug-in list, it's called awesomeness. And, when you read the description, 
+it says this plug-in is the most awesome plug-in ever invented. It will make your site one thousand 
+million times better and make you rich. So, clearly, this is a plug-in I want to install. I've 
+downloaded and installed it so I'm going to click activate. And now Wordpress immediately tells 
+me plug-in could not be activated because it triggered a fatal error.
+
+This is a relatively new feature in WordPress, and that it kicks in anytime you try to install a 
+plug-in that's broken. This is actually a great improvement because previously you'd actually be 
+able to activate broken plug-ins, but you can't do that any more. Wordpress will catch the error 
+and refuse to install the plug-in. If you get this error, you know there's something wrong with a 
+plug-in and you should really instal it. There's a very small chance that it might be a buggy 
+install, so something went wrong during the install of the plug-in, but more than likely there's 
+actually something wrong with the plug-in.
+
+And you want to uninstall it. Now if you update WordPress and one of the plug-ins you already 
+installed doesn't support the new version, WordPress will do the same thing. It will actually 
+find the error and then deactivate that plug-in and tell you its been deactivated. So for 
+plug-ins, you don't really get the fatal crashes, you just get these error messages saying 
+there's something wrong. You need to fix this. To get the white screen of death we need to 
+install a broken theme. So I've installed a theme already. And here in my theme select you 
+can see it its called the best theme in the universes.
+
+And when I click on the theme details you see I have this nice preview that doesn't show me 
+anything. And I have some information about this theme. It says things like, avoid disappointment 
+and future regrets, act now. And the tags are awesome, cool, best and gold. Of course all of 
+these should be clear indications that this is not something you want to install, but sometimes 
+people make weird descriptions of their themes so might be that this could actually be a great 
+theme. To ensure that this theme doesn't crash your site, it's always a good idea to do a live 
+preview of any theme you install on your site.
+
+The live preview will allow you to live preview the site without activating the theme. So if 
+there's something wrong with the theme it wont take down your entire site. When I click on 
+live preview here, you get a live preview of that white screen of death I was talking about. 
+The whole, the white screen with nothing on it. The good thing is I did this as a live preview 
+so I can simply hit the back button on my browser and I go back to WordPress dashboard. To 
+get the full experience of the white screen of death.
+
+something wrong. Notice how my browser is really struggling to load the page? And then when it 
+finally loads, I get nothing. Well, clearly something is wrong with my site now. The really scary 
+thing is if I now go to the front page, I get nothing. And if I try to log into my sites, forward 
+slash wpadmin, I get nothing. I am completely locked out of my site. This is the white screen of death.
+
+And you saw what caused it. It was the theme. And in previous movies I showed you that you can 
+access your themes and install and uninstall them. From the WP content folder. And that should 
+give you a clue. So you have a broken theme, that's breaking your site. And you can access those 
+themes form the files within your site. Then it follows that if I go into the theme folder and 
+file the broken theme and simply either delete it or just change the name of the folder, 
+WordPress will go hey, where does the theme go? Okay, I'm going to revert to another theme then.
+
+So I'm going to go and change the name of the theme here to Universis Broken, and then go back to 
+my site and try to reload WP Admin. Now WordPress panics, because the theme that it's trying to 
+use doesn't exist. It's under a new folder. So you can see here it says WordPress is running 
+Universis theme and if I open this on the front end, you'll see I still get nothing. But, not 
+that I'm in the WordPress back end, I can go and change the theme that is currently active. 
+So I can go to appearance and themes, and here WordPress tells me the active theme is broken, 
+referring to the default theme.
+
+So once you go to appearance and themes, WordPress will revert and now, if you go to the front end, 
+the site has reverted back to the default theme. In my case 2014. Now that WordPress has done that 
+for me, I can simply reload the themes page. 2014 is now active, and I can delete the theme that 
+destroyed my site. So now you know how to handle the widescreen of depth. Now there's one more 
+type of error that you might run into and it's one where WordPress can't talk to the database.
+
+And to make that happen I have to go and break my WordPress install again. So I'm going to go to 
+my WordPress install here. Go to the core. Find a WP-config file and change some of the information. 
+So here I'll give it the wrong database name. Now if I try to reload my site you'll see I get this 
+message. Can't select database. You'll encounter this from time to time. It's kind of weird because 
+sometimes when you visit websites online, you'll actually get either that message or this one. 
+Error establishing a database connection.
+
+This could be caused by two things. Either the database server is down or it's being overloaded, 
+in which case you need to contact the database provider and find out what's going on, or your WP 
+config file has been broken. Or there's something wrong with it. And you saw that I already 
+edited the WP config file so you know that in this case that's the problem. To fix it all I 
+have to do is go back to the WP config file, and put the information in. So if you ever experience 
+that on your sites Chances are something's gone wrong in this file in your WordPress install.
+
+So you need to go back into the file, check that all the settings are correct, and then update 
+any settings that were changed and save the file. When you go back to your browser again, the 
+site should just come back online, and your Admin panel should also come back online. On the 
+off chance that this is happening on the server end, the server manager should be able to bring 
+the server back up, or at least figure out what's wrong, and then get it back up and running again. 
+So, now you've gone through the three main scenarios that cause catastrophic failures in WordPress.
+
+And as you can see, no matter how traumatic it looks, It's actually quite easy to fix. All you have 
+to do is stay calm, think about what actually happened right before the site crashed, and then 
+figure out if you can go and simply rename something or deactivate something to bring the site 
+back online. Chances are that'll work and you'll be back up and running again in no time.
 
 
 
