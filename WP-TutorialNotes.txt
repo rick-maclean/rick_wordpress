@@ -1798,6 +1798,91 @@ back online. Chances are that'll work and you'll be back up and running again in
 
 Exporting and importing content from other sites***********=====================
 ===================******************************
+Using WordPress you're probably going to run into situations where you're either need to export content 
+out of your existing WordPress site and place it into a new WordPress site or you need to import content 
+from an existing wordpress, wordpress.com or other blogging engine site and put it into your new wordpress 
+site. All of this can be done from the 
 
+WordPress admin panel. 
+
+And you'll find those functions under the 
+
+Tools section 
+here on the main menu. Here you have both import and export. So let's look at export first.
+
+*****After doing a lot of experimentation with this I've come to the realization that the only real function 
+that works here is to export all content at once.
+
+ Now Wordpress creates an XML file with all the data from the database. In this export, there are no images 
+ or other media files. This is purely a text file and later on, when we import that text file, Wordpress will 
+ go and find the original images and bring them into the site.
+ 
+ Now that you have an export file, you can import content from several different platforms into your 
+ existing Wordpress site. And you do that under Tools And import. Here you get a list of all the 
+ services you can import content from. 
+ 
+ And of course you can import content from and existing WordPress site. When you select one of these 
+ options, like WordPress in this case. You're taken to the plug-in installer page for that particular 
+ plug-in. So here because want to import content from WordPress I'm going to select the WordPress 
+ installer. I'll click install now, and I'll click on activate plugin and run importer. This takes 
+ me directly to the WordPress importer and from here I can now import an XML file that was exported 
+ from another WordPress site.
+ 
+ It asks about users for the posts from the other site.
+ 
+ And then I get the question if I want to download and import file attachments. Here's something very 
+ important. If you are importing content from an existing website that lives on the Web, you should 
+ check this box.
+ However, if you've developed a site on a local server, or on your local computer, and you are now 
+ trying to import content from your locals server. To a site that's on the web, this function will not 
+ work. 
+ 
+ If that's the scenario you're looking at right now, you need to go to the lynda.com library. 
+ And look up a course called 
+ 
+ WordPress Quick Tips Migration and Database Reset. 
+ 
+ This course will take you through the process of resetting your database and importing the content properly 
+ so you can migrate from your computer or a local server to a live server on the Web. 
+ 
+ 
+ 
+ 
 Going further with WordPress: Creating themes and plugins***********=====================
 ===================******************************
+WordPress 3 : Building Child Themes 
+WordPress 3: Creating and Editing Custom Themes 
+
+How to build child themes and parent themes and how to make your site mobile friendly. 
+If you want a guided tour through our courses and you also want to branch into other types of 
+courses that relate to Wordpress, you should go check out the 
+********Wordpress Masterclass playlist *******
+that I created just for that purpose. This playlist will take you on a logical tour, 
+from Essential Training, through all the different courses 
+all the way up to Advanced Theme Development. 
+And it'll branch off into related topics, like HTML, CSS, design, JavaScript and PHP.
+
+So you end up knowing enough to become a professional Wordpress theme developer. As you're working with 
+WordPress, chances are you'll run into situations where you'll want to know more. A good place to find 
+such information is at the WordPress.org codex. This is the official documentation for WordPress and here 
+you find information about everything from how WordPress work, to individual functions within the WordPress 
+code. The codex is the go-to-place for all WordPress developers and it should also be the go-to-place 
+for you as you learn more about WordPress.
+
+The WordPress.org website also has an active support forum. So if you're looking for answers to a specific 
+question, and you can't find them anywhere, chances are you can either find the answer here in the forum, 
+or you can ask the question and other WordPress users, like you and me, will find the answers for you. 
+This forum is very active and it's worth investing some time in it especially if you're looking for help. 
+I'm really excited that you took the time to watch this course and I hope that now that you know how to 
+use WordPress, you'll take that knowledge and build a great website.
+
+And once you launch that website to the web, I want to know about it so share it with me. You can find me 
+on Twitter at the handle @mor10, with a number 10 at the end. And if you want to get in touch with me, 
+this really is the best place to do it. Hit me up with questions, suggestions about new courses, or just 
+to show off what you've created and I'll be sure to respond to you. Now all that's left to say is, thanks 
+for watching and I look forward to seeing your WordPress website live on the web.
+
+
+
+
+

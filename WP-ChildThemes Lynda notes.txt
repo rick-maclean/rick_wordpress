@@ -1,0 +1,350 @@
+Introduction
+Welcome
+1m 6s
+
+Using the exercise files
+1m 34s
+
+What you need to know before watching this course
+1m 29s
+
+Getting the right tools for theme creation
+2m 50s
+
+
+=====================================================================================================
+=====================================================================================================
+1. Creating a Child Theme from Scratch
+=====================================================================================================
+=====================================================================================================
+17m 2s
+
+What is a WordPress child theme and when should you use it?
+2m 38s
+So by splitting your modifications into a child theme, you protect your own modifications while using the original 
+theme and getting all the upgrades. It's a simple choice; if you want to use a theme and you want to make any change, 
+even if it's a really small one, always use a child theme. Now let's get started.
+
+Picking a parent theme
+3m 55s
+Free vs Premium Pay themes discussed.
+However, there's a caveat to that. In premium themes you'll often find proprietary code, meaning instead of using core WordPress 
+functionality, the developer may have created new functionality specifically for that theme or for that foundry, so that those 
+functions only work as long as you use their themes, and if you ever move away from their themes, you'll lose some of your content. 
+Free themes are generally sparse on features, meaning you get core functionality from WordPress and not much else.
+
+Free themes in general cannot be expected to be future proof, meaning you can't expect them to be updated and you can't expect them 
+to start including new features that come out with WordPress, at least not immediately. That is unless you install a theme that comes 
+directly from WordPress itself.
+
+So one of the default themes for instance will always be up-to-date and will always have all the new features built in. 
+On the other hand, premium themes may have extra caveats that you're not aware of. For example, I've seen theme foundries 
+that actually charge you extra if you want to make a child theme based on one of their premium themes. So that's something 
+you have to look up before you buy a theme from a premium theme foundry. Although there are thousands of free and premium 
+WordPress themes out there to choose from, chances are you're actually better off just using one of the default themes that 
+comes with WordPress when you're creating a child theme.
+
+The reason for that is the default themes have all the latest features, they're all built properly, they're future proof, 
+and they're always easy to work with, because they have great documentation. In this course, we'll be working with the Twenty 
+Twelve theme, which was released in the fall of 2012. This theme is simple to use, it has all the core features we need, and 
+it's written in such a way that it's easy to understand and easy to build child themes from. 
+
+
+
+Making sure you have the Twenty Twelve parent theme
+1m 50s
+
+Creating and activating a basic child theme
+4m 20s
+In the content themes folder create a subfolder  eg childoftwentytwelve
+Now create a file style.css from notepad++ and save as cascading stylesheet
+
+Now all we need it put something like this in it
+/*
+Theme Name: Child of Twenty Twelve
+Theme URI: ????
+Description: Cool child theme based on Twenty Twelve
+Author: Rick MacLean
+Version: 0.0.1 
+Template: twentytwelve
+*/
+
+Now you'll also notice this looks terrible and that's because my child theme currently has no stylesheet, so what you're seeing is only the 
+content on the page with no style. That's the next step to add style back into the child theme.
+
+Then goto Themes and we see that theme available as a child theme which I can activate. 
+
+
+Importing parent theme styles
+4m 19s
+When you make a child theme, you start off with a theme that displays all the content without any style. That's because your child theme 
+stylesheet is currently empty. If you're going to build a new layout with completely custom styles this is great because you can start 
+from scratch, but in most cases, you want to import the existing styles from the parent theme and then work based on those styles. 
+
+There are two ways of doing this (I'll show you my recommendation.)
+
+The two methods are overwriting versus overriding, and though they sound almost the same, they're very different when you actually do them.
+
+overwriting: you copy out all the code from the stylesheet, and you paste all that code into your child theme stylesheet. That way you have 
+     full micromanaging control over every little piece of style code in your theme, and you never have a situation where one piece of 
+	 code overrides another piece of code.
+	 
+	 It means that you can ignore anything that's happening in the parent theme, and you can write your own style code, and everything will be 
+	 fine. That means no surprises, but it also means that if an update comes out for the parent theme, and that update includes new content, 
+	 that new content will not be styled and you'll have to write styles for it. 
+	 
+overriding: you simply reference the parent styles, and then you just add the styles you want to change in your child theme styles.css file.
+     This means you have control over everything you want to control, and you leave everything else to the parent theme. It also means that any 
+	 future styles that are included in an update will also be included in your child theme, and it means that in very rare cases some of those 
+	 future styles may mess with what you've already created. But the most important thing about overriding is that you will always get all the 
+	 updates and it's a lot less work. So I recommend, unless you're changing everything, you should always use the overriding method.
+	 
+open style.css
+  @import url('../twentytwelve/stle.css')	
+
+Understanding this technique of importing the styles from the parent stylesheet into the child theme stylesheet without actually copying it, 
+and then overriding those existing styles is very important when you work with the child themes, because then you only have to focus on changing 
+the things that you want to change on the website and you can leave everything else alone.
+  
+
+  
+=====================================================================================================
+=====================================================================================================
+2. Modifying and Adding Styles
+=====================================================================================================
+=====================================================================================================
+16m 2s
+
+Using the developer tools
+3m 53s
+When you work with child themes, or any other theme for that matter, one of the first things people want to do when they install a WordPress 
+site and start working with the theme is make changes to the stylesheet, and this is where an important tool in this browser comes in.
+
+Most modern browsers have web developer tools built-in to make it easy for you to connect to HTML and the CSS together, and 
+also experiment with it.
+
+In Chrome, the web developer tools can be accessed in several different ways. You can go up to the menu here on the far right corner, and 
+select Tools > Developer tools. 
+
+You can also just hit 
+Ctrl+Shift+I 
+in your browser, this will also open the web developer tools, 
+
+or if you want to target a specific element,  all I have to do is 
+right-click on it, 
+select Inspect element and the web developer tools will open directly to that element. 
+
+The web developer tools are actually advanced applications that let you interact with the live code on the web and make changes to it and 
+experiment with it to find out how it works.
+
+So basically the browser and the web developer tools gives me an environment where I can experiment with my code and figure out how 
+things fit together and how they work, and then once I have a code I want and it looks the way I want it to, I can copy it out and 
+save it and make it permanent.
+
+
+
+
+
+
+Modifying existing styles
+4m 24s
+CSS or cascading style sheets work on the simple principle of a cascade. The first styles that are listed have less importance than the last 
+ones, meaning the ones that are the furthest down in the stylesheet matter the most. 
+
+*****
+eg we will change the image round corners
+goto developer tools 
+select an image 
+see styles on right box 
+experiment to find the right thing 
+copy the style and paste in my childTheme
+and make the changes I want
+
+
+Adding space between paragraphs
+4m 7s
+you should do is change the margins around each paragraph to change the height. So if I want to change the space 
+underneath each of the paragraphs what I need to do is make a small change to the style that affects the paragraphs. 
+
+
+
+
+
+Changing font family styles
+3m 38s
+One of the many factors that play into putting forward a consistent presence on the web is the use of fonts. In the past, 
+web fonts were fairly restricted. But today thanks to modern browser technology, you have far greater options where fonts 
+are concerned. The Twenty Twelve theme ships with a custom font hosted by Google Web fonts. Later in the course, we will look 
+at how you can swap out this Google font for different Google web font, but for now, let's take a look at how you can change the 
+style sheet in your child theme to use a standard font instead of the one that ships.
+
+inspect element
+computed style???? computed
+see this 
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;   note Open Sans and has the fallbacks if the first was not there.
+
+To find the original style that kicks in here, instead of using the technique I showed you earlier, I'm simply going to go into 
+the Computed Styles and click on this link that points to the original style in the style-sheet. see by opening font-family
+You see body.custom-font-enabled and then you have the font family: Open Sans, Helvetica, Arial, Sans Serif. Directly 
+above it, you'll notice that the body style also has a font family defined.
+
+see this
+body.custom-font-enabled {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+So I'll copy that's style out, go in to my child theme, and because this is a body style it should be high up in the hierarchy. 
+So I'm going to paste that in directly under the import call. 
+
+So I'm going to swap out all this code with Georgia, Times New Roman, Times, Serif. When I save the style-sheet now, and 
+reload the web page in my browser, you will see that all the fonts on the entire page have been changed to Georgia because 
+that's now the main font family. Now it's important to note that this doesn't necessarily work the exact same way on all themes. 
+
+Many themes have very specific fonts assigned to different elements, and you may find that there's several different places 
+where the font is defined.
+
+In which case, you have to go in and find all the places where the font is defined in the original style-sheet and then 
+overwrite it piece by piece, but in a well-written theme the font is defined once at the very top and you can simply overwrite it the 
+way we did just know, by just typing in a new font family. 
+
+Choosing the right font family for your site is important, and no matter what people say, there is no such thing as a right or wrong font.
+The font that fits with your message and communicates it well is the right font for your website. 
+
+
+
+
+
+
+=====================================================================================================
+=====================================================================================================
+3. Modifying and Adding Templates
+=====================================================================================================
+=====================================================================================================31m 47s
+Understanding the WordPress template hierarchy
+3m 12s
+Modifying existing templates
+2m 33s
+Moving the header image
+4m 29s
+Adding Related Posts feature to posts
+6m 26s
+Creating custom page templates
+5m 43s
+Using conditional statements for customized effects
+5m 41s
+Creating custom header, footer, and sidebar templates
+3m 43s
+
+
+=====================================================================================================
+=====================================================================================================
+4. Customizing the Index Pages
+=====================================================================================================
+=====================================================================================================
+17m 5s
+Understanding the different index pages and what they do
+4m 6s
+Adding author, date, and time information to the index loop
+7m 15s
+Changing the appearance of category index pages
+5m 44s
+
+
+
+
+
+
+
+=====================================================================================================
+=====================================================================================================
+5. Modifying and Adding Functions
+=====================================================================================================
+=====================================================================================================
+43m 5s
+Introducing functions.php
+3m 24s
+Overriding existing functions
+3m 23s
+Adding pagination to index pages
+5m 49s
+Adding to existing functions
+3m 21s
+Adding a new footer menu to Twenty Twelve
+6m 24s
+Adding a new widgetized area to pages
+4m 9s
+Adding static content to the sidebar
+7m 44s
+Replacing existing functions
+2m 36s
+Adding a Google font through a function
+6m 15s
+
+
+
+
+
+
+=====================================================================================================
+=====================================================================================================
+6. Working with Featured Images
+=====================================================================================================
+=====================================================================================================
+10m 24s
+Adding new featured image sizes
+5m 41s
+Adding featured images to posts and pages
+4m 43s
+
+
+
+
+
+=====================================================================================================
+=====================================================================================================
+7. Beyond the Basics
+=====================================================================================================
+=====================================================================================================
+31m 1s
+Adding a welcome message to the front page
+1m 22s
+Displaying page content in an index page
+7m 42s
+Hooking in a featured image
+4m 34s
+Making the welcome message responsive
+6m 27s
+Restricting content to the first page of the blog
+4m 22s
+Adding a jQuery function to show or hide the welcome message
+6m 34s
+
+
+
+
+=====================================================================================================
+=====================================================================================================
+8. Adding Finishing Touches
+=====================================================================================================
+=====================================================================================================
+10m 23s
+Adding a custom favicon
+3m 58s
+Adding a custom screenshot
+2m 29s
+Adding footer information
+3m 56s
+
+
+
+
+
+=====================================================================================================
+=====================================================================================================
+9. Troubleshooting Child Themes
+=====================================================================================================
+=====================================================================================================
+7m 14s
+What to do when a child theme crashes your website
+4m 38s
+Updating parent and child themes
+2m 36s
