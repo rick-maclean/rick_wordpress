@@ -221,6 +221,59 @@ The font that fits with your message and communicates it well is the right font 
 =====================================================================================================31m 47s
 Understanding the WordPress template hierarchy
 3m 12s
+Before we dive deeper into the world of WordPress themes, it's important that you have an understanding of how WordPress 
+operates and how the different pages of your website are created. WordPress is a web application that interacts with a 
+database. That means the constant you enter when you create a new post or a new page doesn't live in the website itself. 
+The content lives in a database and it's only displayed using 
+
+templates *********
+
+when the visitor asks for that content. 
+
+********A theme is a collection of templates WordPress uses to display the database content. *********
+
+For instance, if you were to look at an 
+index page, like the front of a blog, 
+you would usually see a header created by the header.php template, 
+you would see the content created by index.php, 
+you would see a sidebar created by sidebar.php 
+and the footer created by footer.php. 
+
+But if you were to look at a single page, 
+we would still see the same header, 
+the same sidebar and the 
+same footer 
+but the content would be created by a single.php instead. 
+
+So how do you know which of these template files kick-in at what point? That's where the WordPress template hierarchy comes in.
+
+eg
+Let's say you're accessing an archive page, 
+         the category archive, you go in here, it says what is the page, it's an Archive Page and it's Category Archive.
+		 
+		 Okay, in that case, we're going to use the category.php template, right here, 
+		            or if we are more specific about our call, 
+					we can also use the category ID template 
+					or even the category slug template. 
+					If none of these files exit, we fall back to archive.php and then everything gets displayed. 
+					
+The same goes if you're looking at a single post. 
+You ask, what kind of page is it? 
+		It's a Singular Page, it's a Single Post Page and this is a Blog Post which means we'll use single post.php, 
+		and if single post.php doesn't exist, we're going to use single.php instead 
+		and if none of these template files exit, we fall back to index.php.
+		
+
+
+So when you're editing template files in WordPress themes, what you have to think about is what type of content this is 
+and then edit the appropriate template file for that type of content. This may seem confusing at first but once just 
+start working with it you will quickly see that there's a very clear system here and that by knowing what template file 
+to edit you'll be able to control every aspect of what comes out the other end when people access your WordPress site.
+
+
+
+
+
 Modifying existing templates
 2m 33s
 Moving the header image
