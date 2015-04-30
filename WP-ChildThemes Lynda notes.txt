@@ -226,6 +226,11 @@ operates and how the different pages of your website are created. WordPress is a
 database. That means the constant you enter when you create a new post or a new page doesn't live in the website itself. 
 The content lives in a database and it's only displayed using 
 
+At any one time, when there's a person asking for SPECIFIC CONTENT from the database, by clicking a link inside your site, 
+the DATABASE AND THE BROWSER INTERACT TO FIGURE OUT WHAT TYPE OF CONTENT THIS is and then use the appropriate template 
+file to display that content. 
+
+
 templates *********
 
 when the visitor asks for that content. 
@@ -276,14 +281,160 @@ to edit you'll be able to control every aspect of what comes out the other end w
 
 Modifying existing templates
 2m 33s
+When you modify or add to an existing template file in a child theme, you replace the original template file.
+
+eg. Change the single.php template so need to copy it to my child theme
+copy from C:\xampp\htdocs\wordpress\wp-content\themes\twentytwelve\single.php
+
+
+
+
 Moving the header image
 4m 29s
+eg  Appearance : Header : upload header
+now we wnat to move it's location. We just cut and paste it above the site name and description. BUT I now need to make more space 
+after the image.
+NOTE class="header-image"
+so we need a css entry for this class.
+create a style called
+.header-image {
+	margin-bottom: 24px;    <--note any spaces after 24 means it does not work
+}
+
+Now let's get rid of the site title and tag line in appearance uncheck that.
+I added text the a header image so that my site name is showing without the site title and tag line showing.
+
+
+
+
+
+
+
 Adding Related Posts feature to posts
 6m 26s
+Here we add "Yet Another Related Posts Plugin" YARPP and a function 
+https://wordpress.org/plugins/yet-another-related-posts-plugin/
+
+adds a list of related posts. It reads your posts and suggests related ones. 
+check settings  then SAVE now see where it shows up in my posts.
+NOW uncheck Automatically display related content from YARPP Basic on:...then see MORE question mark and can use relates_posts() function to have it show up in a different place
+
+now open my single.php and make the changes.  
+find nav-single and remove it
+<nav class="nav-single">
+					<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
+					<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'twentytwelve' ) . '</span> %title' ); ?></span>
+					<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentytwelve' ) . '</span>' ); ?></span>
+				</nav><!-- .nav-single -->
+insert
+<?php
+related_posts();
+?>
+
+What if we deactivate the plugin????
+Therefore need to do this 
+   if (function_exists()
+   
+And that if something disastrous happens when you install the new function, all you have to do is remove the template file 
+from your child theme and everything goes back to normal again.
+
+If you use plugins in your site, I guarantee you'll come across ones that require you to add functions or other elements 
+to your template files. Using a child theme and wrapping these plugin functions and conditional function_exists tags 
+ensures that you get the full use out of your plugin, that if the plugin breaks or gets deactivated, or uninstalled, 
+it doesn't break your site.
+
+
+
+
 Creating custom page templates
 5m 43s
+POSTS vs PAGES types of content 
+
+2012 has different types of pages 
+Default Template
+Front Page Template 
+Full-width Page Template with No Sidebar.
+
+see page attributes for templates to choose which one. Each of the above ones can had settings changed on them for what displays. 
+
+CREATE OWN PAGE TEMPLATES
+You can create your own page templates to produce specific results on specific pages. I use this 
+technique quite often, because not all pages should be displayed the same way.
+
+look under theme/page-templates   see front-page.php and full-width.php 
+
+now for standard template copy  C:\xampp\htdocs\wordpress\wp-content\themes\twentytwelve\page.php and rename it 
+no-title-page.php 
+
+tell Wordpress this is a custom template by changing the comment.
+/*
+Template Name: No title page template
+ */
+NOW Wordpress will show that as an option for pages. Holy cow what black box magic!
+
+
+
+Now see the following 
+<?php get_template_part( 'content', 'page' ); ?>   this is a reference to content-page.php 
+so I can replace this with the lines in that file and edit it.
+NOW delete this
+<header class="entry-header">
+								<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
+								<?php the_post_thumbnail(); ?>
+								<?php endif; ?>
+								<h1 class="entry-title"><?php the_title(); ?></h1>
+							</header>
+
+The custom page template is an often overlooked tool in the WordPress theme arsenal that allows you to create 
+customized experiences for your visitors in a very simple way. The best way to get the most out of a custom 
+page template is to simply start experimenting. And remember, there are no limits here. If the information 
+exists, you can display it.
+
+
+
+
+
 Using conditional statements for customized effects
 5m 41s
+Now I am going to show you a much cleaner and just as quick way of doing the same thing. as done in the last movie.
+
+Rather than copying and pasting the code, I am going to use one of the many conditional tags built into WordPress, 
+to test to see if were using a custom page template and then display the content accordingly.
+
+if then statements.
+
+set my custom page back to what it was before.
+<?php get_template_part( 'content', 'page' ); ?>
+and use 
+codex.wordpress.org/Conditional_Tags   for displaying things
+
+eg Conditional tags are small functions built into WordPress that allow us to test for different scenarios, 
+and then do things based on those tests. Basically you are saying things like if this is the homepage then 
+do the following, if it's not, do something else.
+
+SOOOO copy content-page.php to child theme and edit it. 
+wrap it in 
+
+<?php 
+		if ( ! is_page_template('no-title-page.php') ) { ?>
+		<header class="entry-header">
+			<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
+			<?php the_post_thumbnail(); ?>
+			<?php endif; ?>
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+		</header>
+<?php } ?>
+
+Using conditional tags, or even regular conditional if then statements in your child theme, you can turn on and 
+off elements and functions at will to create highly customized behavior. I use conditional statements constantly 
+in my sites, because they make the themes lean and clean, and make it easier to manage the template files. 
+
+The rule of thumb here is this, if you want to show or hide something on a page or post and you're planning 
+on making a new template, see if you can get the computer to test for a condition instead so you don't have 
+to write out the entire new template.
+
+
+
 Creating custom header, footer, and sidebar templates
 3m 43s
 

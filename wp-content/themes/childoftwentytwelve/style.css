@@ -37,3 +37,7 @@ I can also delete line-height: 1.714285714; since it comes through via parent th
   margin: 0 0 3.428571428rem;
 }
 
+.header-image {
+	margin-bottom: 24px;
+}
+
