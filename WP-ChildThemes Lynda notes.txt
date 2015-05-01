@@ -437,8 +437,62 @@ to write out the entire new template.
 
 Creating custom header, footer, and sidebar templates
 3m 43s
+The "custom front page template" has separate wigitized areas, or sidebars, than the regular page templates. 
+ the widgets area  see it in the back end. 
+ Main Sidebar, which is what appears on posts and regular pages, 
+ and then you have this 
+ First Front Page Widget Area 
+ and 
+ Second Front Page Widget Area, 
+ 
+ These appear in the bottom of the "custom front page template"
+ see the files: sidebar.php and sidebar-front.php
+ 
+ Seeing the two files you can see 'sidebar-1' 'sidebar-2' 'sidebar-3'
+ where do they come from???? see page.php and call to get_sidebar();  just like get_footer and get_header
+ 
+NOTE: in front-page.php the call is this   get_sidebar('front')   which calls sidebar-front.php
+
+PATTERN.
+normal 
+<?php get_header(); ?>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
+
+to call header-custom.php    --> <?php get_header('custom'); ?>
 
 
+eg REGULAR
+
+header.php 
+
+page.php calls
+    get_header();                       sidebar.php 
+	get_footer();
+	get_sidebar();
+
+footer.php
+
+CUSTOM eg no-title-page.php
+
+header-custom.php 
+
+no-title-page.php calls
+    get_header('custom');                                             sidebar.php 
+	get_footer();   can do the same for sidebar and footer too
+	get_sidebar();
+
+footer.php
+
+
+====
+====
+This allows you to add and subtract content in areas like the header, sidebar, footer, depending on what page, 
+post, or index the visitor lands on, and that can in turn be used to give the visitor a more meaningful and 
+informational experience when visiting your site.
+
+
+ 
 =====================================================================================================
 =====================================================================================================
 4. Customizing the Index Pages
@@ -447,8 +501,89 @@ Creating custom header, footer, and sidebar templates
 17m 5s
 Understanding the different index pages and what they do
 4m 6s
+One of the key components of any WordPress site is the index pages. Simply put, an index page shows a list of 
+posts from the site depending on what you're asking for. The most well-known of the index pages is the blog page, 
+which displays all the posts of the site in reverse chorological order. Other index pages include category index 
+and archive indexes. The index pages in a WordPress theme or child theme live in a hierarchy and kick in at different 
+times. Understanding which index page template handles and displays what content will help you customize the look 
+and feel of your site and also avoid a lot of frustration when things don't display the way you intended.
+
+What happens when you display any page in WordPress is the database and the browser cooperate to 
+figure out what template to use.
+
+eg looking at a Category page 
+Wordpress says what kind of page is this????
+it is an Archive Page : Catergory Archive :  do we have a file called    category-slug.php??? 
+														then do we have category-Number.php
+														yes/no then do we have category.php then use it.
+											       
+Sooooo we have the following Archivefiles
+archive.php 
+author.php 
+category.php 
+tag.php
+
+
+eg
+index.php   see codex.wordpress.org/Template_Hierarchy
+also see 
+<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php endwhile; ?>
+			
+this means get for each post 
+content.php 
+BUT also have content files for each of the main post formats, aside, image, link, and so on.
+contant-aside.php 
+content-image.php 
+...
+...etc
+
+We even have one for page. If we look at content, you'll see that all that happens here inside the loop is we display the 
+content for each post. We get the post thumbnail, we get the title, we get the comments link, and we get either an excerpt 
+or the contents, depending on what type of archive this is. So as you can see, just like with the page templates, the 
+index page templates work in collaboration with the content templates to display all the content.
+
+So as you can see, just like with the page templates, the index page templates work in collaboration with the content 
+templates to display all the content.
+
+Understanding how the index pages work will help you come up with, and implement, new and exciting ways to display 
+content. More importantly though, it'll help you troubleshoot potential problems when something doesn't display 
+the way you intended, because now that you know how the template structure works, you can track down the correct 
+template and make changes to that template when things aren't displaying correctly.
+
+
+
+
 Adding author, date, and time information to the index loop
 7m 15s
+Once you start personalizing your child theme, you'll probably want to make changes to the index pages, as well as 
+a single posts and pages. Working with the index templates require a bit more thinking on your end, but it's not 
+any more complicated, and you can produce some pretty cool results with very little effort. 
+
+He wants to move the Author etc to the top of the post vs the bottom 
+See index.php 
+which calls content.php so copy this to child theme 
+
+THen move <footer class="entry-meta">
+			<?php twentytwelve_entry_meta(); ?> up to before    <div class="comments-link">
+BUT it has more than I want sooooo. find twentytwelve_entry_meta()   in functions.php
+and copy $date and $author, then echo 'Published on: ' . $date . 'By: ' . $author
+
+
+So all we have to do is copy out the entire section here from footer to end footer and paste it into content.php and 
+you'll get the same results that I got. Here you've seen several different things: how the content.php template file 
+interacts with multiple different other template files and uses functions from those files to display content; you've 
+also seen how we can use existing code as building blocks to create new effects; and you've gotten a sneak peek at the 
+functions.php file that we'll look at in more detail later.
+
+But I want you to take away from this is any content you can see on the page you can always grab and put somewhere else 
+in your template simply by copying wherever it comes from and placing it somewhere else.
+
+
+
+
+
 Changing the appearance of category index pages
 5m 44s
 
