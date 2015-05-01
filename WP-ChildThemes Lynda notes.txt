@@ -586,6 +586,55 @@ in your template simply by copying wherever it comes from and placing it somewhe
 
 Changing the appearance of category index pages
 5m 44s
+WordPress has multiple different index templates that kick in when different indexes are called, the most notable-- 
+and the ones you should see in pretty much every WordPress theme--are index.php, category.php, tag.php, and archive.php. 
+The names are self-explanatory. Sometimes you want different index pages to appear differently in your sites. I often find 
+that while on the main index page it makes sense to have longer versions of the posts, with images and full text, on category 
+and archive index pages it makes more sense to have shorter versions and maybe no images.
+
+This can be accommodated by calling for an excerpt instead of the content of a post when the category or archive templates 
+are used. If you look at the site the way it is now, you can see that on the front page, or the main index page, we have 
+the full post, web images, and if there's a featured image, the featured image appears at the top. If we go to the category 
+archive page, we'll see the exact same thing. Here we have the full post with images, and if there is a featured image, it's 
+featured at the top. 
+
+******
+What I want to do is make the content of a post into just an excerpt, and I also take want to take away the featured image.
+
+Now look at category.php 
+see this.... 
+while ( have_posts() ) : the_post();
+
+				/* Include the post format-specific template for the content. If you want to
+				 * this in a child theme then include a file called called content-___.php
+				 * (where ___ is the post format) and that will be used instead.
+				 */
+				get_template_part( 'content', get_post_format() );
+
+endwhile;
+
+we want to change content.php so have less info for category.php 
+so change inside content.php 
+
+
+we see if (is_search()) then only show experpt
+otherwise call the_content()
+we can add more conditions  see codex.wordpress.org/Conditional_Tags#Any_Archive_Page
+There are conditional tags available that can test for all the things that we want to test for.
+is_category()
+is_archive() 
+is_tag()
+etc etc use OR || 
+
+
+so now we have 
+<?php if ( is_search() || is_category() || is_archive()  || is_tag() ) : // Only display Excerpts for Search ?>
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-summary -->
+
+
+
 
 
 
