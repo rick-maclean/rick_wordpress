@@ -650,14 +650,280 @@ so now we have
 43m 5s
 Introducing functions.php
 3m 24s
+At the core of all WordPress themes lies a file named functions.php. As the name suggests, the functions.php file 
+contains core functions that make the theme work. These functions range from simple bits of code that activate code 
+WordPress functionality to advanced functions you can modify to add new functionality and new features to the theme 
+and to the site. Understanding the role and function of functions.php will enable you to go from simply messing with 
+the template files in CSS to adding whole new levels of awesomeness to your site.
+
+The good theme about the twentytwelve theme and the other core themes from WordPress is that they come heavily documented, 
+meaning there's lots of explanations inside the files that explain what these files do.
+
+eg line 61 of functions.php in 2012 
+you'll see here we have a simple function called add_theme_support. This function adds different types of theme support, 
+for example post-formats. So here you can see post-formats are activated and then there is a list of what types of 
+post formats are activated, because there are several different types of formats you can activate if you want to 
+and twentytwelve uses five of these post formats.
+eg
+// This theme supports a variety of post formats.
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+	
+	
+Where are the widgits areas???
+function twentytwelve_widgets_init() {
+register_sidebar( array(
+		'name' => __( 'Main Sidebar', 'twentytwelve' ),
+		....
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'First Front Page Widget Area', 'twentytwelve' ),
+		.....
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Second Front Page Widget Area', 'twentytwelve' ),
+		.....
+	) );
+
+	line 258, you'll see where the comments come from. This is actually after the template that creates the comments 
+	section on your site. So when you want to work with comments you need to work with the code inside function.php 
+	and also inside comments.php. What I have shown you here is just a small selection of what's in functions.php, 
+	and we're now going to work with function.php to augment what's in there already and also add new stuff to the file.
+	
+	functions.php holds a lot of behavioral elements of a WordPress theme, and understanding how it works and how to interact 
+	with it will allow you to make truly advanced themes that work the way you want them to. Fortunately, the 2012 developers 
+	have left excellent documentation right in functions.php file, so it's easy for you to figure out what's going on.
+	
+	
+	
+	
+	
+
 Overriding existing functions
 3m 23s
+overrider or overrule???? 
+
+Most well-written themes wrap functions in conditional statements so that they can easily be overwritten by child themes.
+
+eg 
+// Set up the content width value based on the theme's design and stylesheet.
+if ( ! isset( $content_width ) )
+	$content_width = 625;
+Here we can set this in the child theme to another value to override this. 
+Unlike with a style sheet where the parent theme style sheet is called first and then the child theme style sheet is called, 
+when it comes to functions.php, the child theme functions.php file is called first and then the parent theme functions.php is 
+called afterwards. Meaning, if you have set content_width in your child theme, this condition says it's already set; therefore, 
+we're not going to set it in the parent theme.
+
+eg  note here if the child theme has created this already then do not create it here.
+if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
+/**
+ * Displays navigation to next/previous pages when applicable.
+ *
+ * @since Twenty Twelve 1.0
+ */
+function twentytwelve_content_nav( $html_id ) {
+	global $wp_query;
+
+	if ( $wp_query->max_num_pages > 1 ) : ?>
+		<nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation" role="navigation">
+			<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
+		</nav><!-- .navigation -->
+	<?php endif;
+}
+endif;
+
+
+eg 
+		add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 ); 
+This is a filter. It says add_filter, wp_title. A filter is different from a function, in that when you have a filter you can pass 
+information to that filter and change the behavior of the function. So this filter interacts with the function above it, twentytwelve_wp_title. 
+ And what you can do in your child theme is add information with a filter 
+that then gets passed into this function and you can change to function through that filter. So it's a more advanced option when you want 
+to change maybe a word or a link or something like that in that function without having to rebuild the function in the process.
+
+
+
+
+
+
+
 Adding pagination to index pages
 5m 49s
+
+eg of changing a function.....
+Let's look at an example of how you can override an existing function found in twentytwelve and replace it with a whole new function 
+in your child theme. Though they're standard in WordPress themes, I don't particularly like the Older posts and the Newer posts links 
+at the bottom of index pages. You can see it down here at the bottom. It says Older posts. When you click on it you go to page two and 
+then you get either Older posts or Newer posts. I much prefer proper pagination lists where I can see how many total pages there are, 
+and I can navigate in a more advanced way.
+
+Now I want to replace the existing function that creates this Older posts and Newer posts link with a proper navigation menu instead. 
+twentytwelve comes with a function called 
+			twentytwelve_content_nav
+
+1) create functions.php in child theme
+2) copy function and modify it 
+function twentytwelve_content_nav( ) {}   
+3) Now if I reload my web page the navigation will not be there since this function is empty
+4) search  on internet for open source function to do what I want. 
+
+For pagination I found this great article called How to build a WordPress Post Pagination without plugin at kriesi.at
+goo.gl/njhZ
+This is a solution I've used many times, though I've augmented it quite a bit, and this is the solution we're going to 
+use in the theme now.
+ If you read this article, you'll see the explanation of how the function works with code examples and also how the style works, 
+ and you can see how this all fits together so you get this nice navigation menu. 
+ What I have done for this course is I've supplied you with an alternate version of this code specifically for the twentytwelve 
+ child theme that you can copy out of the code snippets file and paste into your functions.php file.
+ 
+ So we'll go to the codesnippets file, scroll down to this chapter number, 5.3,
+ Save it and reload page to see what happens.
+ 
+ 
+ He set up Reading to show only one post per index. The index at the bottom looks ugly soooo....
+he said.... this doesn't look very good; I need some style to augment it so that it looks nice on my site. So I'll go back to my code 
+snippets, scroll down, and here you'll find pagination styles that I've created specifically for this theme so that it works. 
+We can copy that out, go up to the style sheet in child of twentytwelve, open the style sheet in your child theme, and then 
+paste in the new styles. I'll paste them in here at the bottom. We see there's quite a few styles here that will style the 
+different elements. Save that, reload your page again, and now you have a nice pagination bar here at the bottom that works 
+exactly the way you would expect pagination to work.
+
+NOTE: this did not work in my website
+
+MORAL TO THE STORY:
+Because the twentytwelve_content_nav function was properly wrapped in a conditional statement, we have an easy time overriding 
+it and adding in new functionality. As a result, we've now added a great new functional pagination system to all our index pages 
+with minimal effort.
+
+
+
+
+
+
 Adding to existing functions
 3m 21s
+Sometimes overwriting an existing function is not what you want to do. You'll will often find that a function has a lot of elements 
+you already want and all you want to do is add some more to it. In those cases, you can use your child theme functions.php file 
+to add the extra functionality to the existing function.
+
+eg
+There are some great examples of how you can add on to existing functions in twentytwelve and many of these examples you'll find in 
+most WordPress themes. If you go to the functions.php file for twentytwelve and you go to line 64, you'll find register_nav_menu.
+see this:
+ * @uses register_nav_menu() To add support for navigation menus. comment 
+ 
+ line 64 
+ // This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) ); 
+
+	This is where you register the main menu inside your WordPress site. If you look at the site, you see there is a nav menu right 
+	here at the top and if I go into the Dashboard > Menus, you'll see that menu is listed right here
+	
+
+In your child theme you can now add additional menus, simply by duplicating this line in your child theme and wrapping 
+it in a function so that it gets called.
+That way you can add several different menus to your site by simply adding onto the existing function. 
+
+The same goes for the sidebar. If you go to line 195, you find this function, twentytwelve_widgets_init, and this function creates a 
+sidebar. So here you see there're three sidebars being called. 
+function twentytwelve_widgets_init() {
+	register_sidebar( array(
+		'name' => __( 'Main Sidebar', 'twentytwelve' ),
+		...
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'First Front Page Widget Area', 'twentytwelve' ),
+		'id' => 'sidebar-2',
+		...
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Second Front Page Widget Area', 'twentytwelve' ),
+		'id' => 'sidebar-3',
+		...
+	) );
+}
+ In your child theme you're allowed to make your own widget init function, and in that function you can register more 
+ sidebars. These sidebars will then be appended to the existing ones so now you can have more sidebars then you had previously.
+ 
+What's important to note about these functions, both register_nav menu and register_sidebar, is that they're wrapped in 
+additional functions. You'll see here register_sidebar is wrapped in this existing function, twentytwelve_widgets_init, 
+and if go up to register_nav menu on line 64, you'll see that register_nav menu is actually contained within 
+a function called twentytwelve_setup. 
+In your child theme you can create a new function and run that function, and within that function you would then puts 
+register_nav menu or register_sidebar or other things.
+
+The other cool thing about this is there's no limit to how many you can add. You can have 100 menus or 200 sidebar areas if you 
+wanted to, although that would be hard to manage. 
+
+Remember how I said that functions.php from your child theme gets called before functions.php from your parent theme. 
+That means you can't create a new function called twentytwelve_setup. If you do that, it'll crash everything, because 
+there's no conditional statement here.
+
+If you want to make a new function, you need to call something else, like my theme_setup and then you can call a 
+new menu inside it. You also not create a new menu called primary menu, because there is already one created 
+with that name. And you have to remember that your menu calls first. So if you create a new menu called Primary, 
+that's the one that will kick in, and it'll ignore the one that's in here. Building child themes is all about 
+doing more with less. Adding to a function instead of overriding it or overwriting it is a simple way of adding 
+functionality with minimal effort.
+
+
+
 Adding a new footer menu to Twenty Twelve
 6m 24s
+Pretty much all WordPress themes come with a main menu in the header, and most of these themes have the main menu 
+wired to the WordPress menu system for easy configuration. I'd like to add an extra menu in the footer as well so 
+that if a person has reached to bottom of the site, they can navigate to all my important pages without having to 
+scroll back to the top of the page. Using a child theme, adding the menu like this, is very easy. 
+
+To add a new menu we have to do three things. 
+1)We have to add the menu to the existing menu function using function.php, 
+2)we than have to add the menu to the template files, 
+3)and then we have to style the menu to make it look nice.
+
+1) copy
+// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) ); 
+to child function.php
+
+like this:
+function mychildtheme_setup() {
+// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'secondary', __( 'Footer Menu', 'twentytwelve' ) );
+}
+BUT we need an action to make mychildtheme_setup run 
+add_action( 'after_setup_theme', 'mychildtheme_setup' );
+
+Now in the backend I can see this Menu under Manage Locations  (differs from the tutorial since it is now 2015)
+
+The menu needs to be put in the theme if it will show up. I want it in the footer so get the footer.php and put in childtheme .
+edit it and put in
+<nav id="footer_menu">
+		<?php wp_nav_menu( array( 'theme location' => 	'secondary'));  ?>
+</nav>
+save and see it there but does not look pretty....
+
+soooo chooose the styling for the header.php file so copy it and clean it up like this.
+<nav id="footer-navigation" class="main-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'nav-menu' ) ); ?>
+</nav><!-- #footer-navigation -->
+And the look and feel is like the header menu
+
+When I scroll down to the bottom, we now have a nice-looking menu at the footer that's different from the top. So now you can go 
+back to Menus and you can create two different menus--one for the header and one for the footer-- and assign them to each of them. 
+By adding a menu to the existing menu functions, we preserved the original menu rather than overwrite it. This way you can add as 
+many menus as you want and create custom navigation for your visitors to find what they're looking for. CAN CUSTOMIZE IT TO BE DIFF.
+
+
+
+
+	
+
 Adding a new widgetized area to pages
 4m 9s
 Adding static content to the sidebar
