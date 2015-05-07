@@ -1,7 +1,13 @@
 <?php
 /* Functions file for the Child of 2012 child theme */
 
+function mytheme_dequeue_fonts () {
+	wp_dequeue_style( 'twentytwelve-fonts'); /*dequeue this style*/
+	wp_enqueue_style( 'montserrat', 'http://fonts.googleapis.com/css?family=Montserrat:400,700');
+}
+add_action ( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11);
 
+		
 function mychildtheme_setup() {
 
 // This theme uses wp_nav_menu() in one location.

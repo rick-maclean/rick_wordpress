@@ -1006,6 +1006,9 @@ use code snipits
 I added the files to ChildTHemeof2012/images.  I had to find ones that were small enough
 I added the code snipits to sidebar-page.php and styles.css 
 
+Static content in a sidebar is usually reserved for things that shouldn't be changed, and this technique 
+should be used sparingly. However, in the right circumstances adding static content--whether it be 
+links, images, ads or something else--makes a lot of sense, and now you know how to do just that.
 
 
 
@@ -1013,8 +1016,116 @@ I added the code snipits to sidebar-page.php and styles.css
 
 Replacing existing functions
 2m 36s
+From time to time you'll want to disable or replace existing functions altogether. This can be because 
+you want to remove the function or because you want to replace it with something completely different. 
+To get a clear picture of when this would happen, it's important to understand what types of functions 
+you're likely to find in the functions.php file. In addition to the typical WordPress functions like 
+the ones you have seen-- menus, sidebars, navigation, and so on-- the functions.php file also often 
+carries with it calls to style sheets and JavaScript through what's known as enqueueing.
+
+****> If you want to disable these, you need to dequeue them.
+eg 
+function twentytwelve_scripts_styles() {
+	global $wp_styles;
+....
+....
+add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
+
+eg 
+wp_enqueue_script( 'comment-reply' );
+wp_enqueue_script( 'twentytwelve-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20140711', true );
+wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );
+
+So what does it mean when it says that a script or a style is enqueued? Well, it means that WordPress is 
+calling it into the theme without specifying it in the header.php file or footer.php file or anywhere else. 
+
+That means this style (twentytwelve-fonts) and the other styles and the other JavaScript functions are being added through the 
+functions.php file instead. And because they are added in through an enqueue function, we need use the 
+dequeue function to take them out so that we can replace them. By dequeuing functions in your child 
+theme, you're actively telling WordPress to ignore those functions after they've been called in the 
+parent theme. It seems a bit convoluted and to be quite frank, it is quite convoluted, but it allows 
+you to control functions without actually removing them from the parent theme altogether.
+
+
+
+
 Adding a Google font through a function
 6m 15s
+Out of the box the twentytwelve theme uses a font from the Google Fonts library called Open Sans 
+as its main font. Earlier in the course, I used CSS in my child theme to override that font so 
+that we are instead using Georgia. But now I want to replace the Google Font Open Sans with a 
+different Google Fonts using a function and enqueuing a style sheet. Before I do anything else, 
+I need to get rid of the styles in the child theme style sheet that are causing the site to display 
+using the Georgia font.
+
+comment out this 
+body.custom-font-enabled {
+	font-family: Georgia, Times New Roman, Times, serif;
+}
+Now in functions.php parent copy the dequeue code sample in the comments 
+NOTE: I cannot find this in the version as of May 2015 
+THIS IS WHAT I FOUND
+/**
+ * Return the Google font stylesheet URL if available.
+ *
+ * The use of Open Sans by default is localized. For languages that use
+ * characters not supported by the font, the font can be disabled.
+ *
+ * @since Twenty Twelve 1.2
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function twentytwelve_get_font_url() {...
+...
+maybe we can do the opposite of this??? 
+add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
+
+To make it all work there is an add_ action call, and the add_action call calls 
+mytheme_dequeue_fonts 
+down here and stacks it after the parent theme functions.php file has been run. That's why you have 11 at the end. So if I this, go back to my browser, and reload this page, you'll see that the font changes ever so slightly. That's because the font now fell back to the next option in the font family, which is either Helvetica or Arial or Sans Serif.
+
+functions.php has this 
+wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );
+
+add this to the local functions.php
+function mytheme_dequeue_fonts () {
+	wp_dequeue_style( 'twentytwelve-fonts');
+}
+add_action ( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11);  //11 says run this last 
+
+Now let's find the font we want 
+www.google.com/webfonts 
+https://www.google.com/fonts
+
+Select the font I want and then options and copy the code I need to used to put in my web site. 
+click on quick use : check boxes : then select code
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+I can add this to my function.
+function mytheme_dequeue_fonts () {
+	wp_dequeue_style( 'twentytwelve-fonts'); /*dequeue this style*/
+	wp_enqueue_style( 'montserrat', 'http://fonts.googleapis.com/css?family=Montserrat:400,700');
+}
+Now see if it is there even thought it is not showing up
+ctrl shft i 
+select resources 
+my site : style : css  and will see the font
+
+now copy the line of code from the googleFonts to the CSS file to activate it
+but wrap it in body
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+Sometimes you have to do a bit more work to get your child theme to do exactly what you want. 
+This example shows you the process of disabling and replacing a function to get a different 
+result. You can use the same technique to disable and/or replace JavaScripts and other styles, 
+and even some other core functions like menus, comments, and widgetized areas in twentytwelve. B
+asically, anything you find in the functions.php file of 2012 that's enqueued you can dequeue, 
+and you can also enqueue any style and any JavaScript you want.
+
+
 
 
 
