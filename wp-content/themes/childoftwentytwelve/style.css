@@ -89,3 +89,38 @@ ul.pagination {
 
 /* END PAGINATION */
 
+
+/* SOCIAL ICONS IN SIDEBAR */
+
+#social-icons li {
+
+}
+               
+#social-icons a:link,              
+#social-icons a:hover,
+#social-icons a:visited {
+	display: block;
+	float: left;
+	text-indent: -9999px;
+	width: 32px;
+	height: 32px;
+	margin: 0 10px 10px 0;
+}
+
+.social-twitter a {
+	background: url('images/twitter-icon.png') no-repeat;
+}
+
+.social-facebook a {
+	background: url('images/Facebook-icon.png') no-repeat;
+}
+
+.social-flickr a {
+	background: url('images/flickr-icon-19x19px.png') no-repeat;
+}
+
+.social-contact a {
+	background: url('images/email.png') no-repeat;
+}
+
+

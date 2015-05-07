@@ -58,4 +58,15 @@ function twentytwelve_content_nav()
 
 // END pagination
 
+
+register_sidebar( array(
+		'name' => __( 'RickPage Sidebar', 'twentytwelve' ),
+		'id' => 'sidebar-4',
+		'description' => __( 'Appears only on pages', 'twentytwelve' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
 ?>

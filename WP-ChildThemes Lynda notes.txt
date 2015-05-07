@@ -926,8 +926,91 @@ many menus as you want and create custom navigation for your visitors to find wh
 
 Adding a new widgetized area to pages
 4m 9s
-Adding static content to the sidebar
+Earlier in this course I talked briefly about widgetized areas and sidebars. Now we're going to take a look at how you can add new 
+widgetized areas to your site.
+To add a whole new widgetized area we first have to add to the existing function that creates widgetized 
+areas and then we have to add that area to a new sidebar file, or somewhere else. In our functions.php file 
+you find the function that registers the sidebars at line 195.
+function twentytwelve_widgets_init() {
+	register_sidebar( array(
+		'name' => __( 'Main Sidebar', 'twentytwelve' ),
+		'id' => 'sidebar-1',
+		...
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'First Front Page Widget Area', 'twentytwelve' ),
+		...
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Second Front Page Widget Area', 'twentytwelve' ),
+		...
+	) );
+}
+add_action( 'widgets_init', 'twentytwelve_widgets_init' );
+
+Add another one in my functions.php file 
+register_sidebar( array(
+		'name' => __( 'RickPage Sidebar', 'twentytwelve' ),
+		'id' => 'sidebar-4',
+		'description' => __( 'Appears only on pages', 'twentytwelve' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	Now on our website we can see this option under Widgets on the backend 
+	We can put in things in there.
+	We still need to put in the new sidebar in a custom template
+	  copy sidebar.php(rename as sidebar-page.php) and page.php to my childtheme 
+	  in sidebar-page.php refer to sidebar-4
+	  
+	  I now have to change my page template to call this new sidebar-page template.
+	  and change <?php get_sidebar(); ?> to <?php get_sidebar('page'); ?>
+	  
+Though widgets are most commonly found in sidebars and footers, you can actually put a widgetized area 
+anywhere you want. Now that you know how to do it, you can knock yourself out putting widgetized areas 
+anywhere. Just remember that you have to link all these files together like you saw to make it all work.
+	
+
+
+
+Adding static content to the sidebar   (in this case facebook etc etc Icons)
 7m 44s
+Sidebars are most often used to provide links and further information about the site to your visitors. 
+This is normally done through widgets, but in some cases you may want to add some permanent static 
+content to the sidebar as well. There are many reasons for this, but one example is if you want to 
+add social media links at the top of the sidebar permanently. As you can see, in my site right now 
+I have some links to social media here. They're just regular text links and they're added in through 
+a widget. So I can go into my Widgets and show you the actual links.
+
+Do this by adding text widgets with standard html in them.
+What I want to do is put this code into my sidebar.php template instead so it's there permanently, 
+no matter what the widgets do, and I also want to restyle it so that it looks a bit nicer, with some 
+icons instead of just text. The first thing I need to do is get the sidebar.php file over in my child 
+theme, so I'll go and find sidebar.php and copy it over and then I can make changes to it.
+
+copy sidebar.php to my childtheme
+note there is stuff in the functions.php file for the widget that needs to be copied.
+
+see that I put it in sidebar-page.php since that was done in the last lesson.
+
+Now he addes icons he found on the web 
+create sub folder called images and put them in there.
+
+add to the stylesheet.each list item has a class to associate the image to the link
+use code snipits 
+
+I added the files to ChildTHemeof2012/images.  I had to find ones that were small enough
+I added the code snipits to sidebar-page.php and styles.css 
+
+
+
+
+
+
 Replacing existing functions
 2m 36s
 Adding a Google font through a function
