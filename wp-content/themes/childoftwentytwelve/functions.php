@@ -12,6 +12,19 @@ function mychildtheme_setup() {
 
 // This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'secondary', __( 'Footer Menu', 'twentytwelve' ) );
+	
+	// New widgetized sidebar area for pages
+	register_sidebar( array(
+			'name' => __( 'RickPage Sidebar', 'twentytwelve' ),
+			'id' => 'sidebar-4',
+			'description' => __( 'Appears only on pages', 'twentytwelve' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+	) );
+	
+	add_image_size( 'category-thumb', 100, 100, true);
 }
 add_action( 'after_setup_theme', 'mychildtheme_setup', 11 ); //note the 11 makes this menu appear after the Primary Menu in the backend
 
@@ -63,16 +76,5 @@ function twentytwelve_content_nav()
 }
 
 // END pagination
-
-
-register_sidebar( array(
-		'name' => __( 'RickPage Sidebar', 'twentytwelve' ),
-		'id' => 'sidebar-4',
-		'description' => __( 'Appears only on pages', 'twentytwelve' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
 
 ?>

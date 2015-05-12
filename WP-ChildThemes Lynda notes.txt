@@ -1140,6 +1140,43 @@ and you can also enqueue any style and any JavaScript you want.
 10m 24s
 Adding new featured image sizes
 5m 41s
+Featured images, or post thumbnails, is a great function built into WordPress that in my opinion is not used nearly 
+enough. Using featured images you can do all sorts of cool stuff like creating featured content sliders, add image 
+previews, and indexes, and even make post galleries. Featured images can also be configured to interact with social 
+sharing sites like Facebook and Google+ so that you can control what image appears when someone shares your content, 
+because featured images are so powerful it's important that you understand how to add the image sizes you want and 
+how to use them.
+
+If you look at the twentytwelve theme, you can see that there is a featured image at the top of each post. 
+To assign a featured image you go into edit the post and you scroll down and on the right side you have the Featured 
+Image option. By default, the featured image appears at the top of each post, and if you go into the index and if 
+you go into the index and you find a post that has a featured image, the featured image appears in the index as well. 
+But what if you want to use a different-sized featured image? In that case you have to tell WordPress what size you 
+want and how you want WordPress to handle that image.
+
+C:\xampp\htdocs\wordpress\wp-content\uploads  contains all images loaded to my site and have the various sized of the file.
+150x150 etc 
+these are set in Settings : Media : and defined sized for various things
+
+When you are working with a theme and you want to include featured images in your theme you want to predefine the size of that 
+image, and you want to make it so that no one can change it, because otherwise things might break. Adding new image sizes is done in the 
+functions.php 
+file, just like adding pretty much everything else is. To add a new image size I'm going to go to functions.php in my child theme, 
+find this 
+mychildtheme_setup function 
+I already created, and here I am going to register a new image size.
+
+add_image_size( 'category-thumb', 100, 100, true);
+
+
+When I save this, what will happen is next time I upload an image to WordPress, WordPress will create an image that's 100 x 100. 
+However, it doesn't automatically do that to the images that are already in the system. To make that happen I have to add a 
+plugin that'll go through all the images and create the new size. So now I need to go to Plugins, add a new plugin, search for 
+regenerate, and here you'll find a plugin called 
+				Regenerate Thumbnails created by Viper007Bond.
+
+
+
 Adding featured images to posts and pages
 4m 43s
 

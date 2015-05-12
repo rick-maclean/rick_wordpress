@@ -130,4 +130,9 @@ ul.pagination {
 	background: url('images/email.png') no-repeat;
 }
 
+.cat-thumb {
+	float : left;
+	margin : 0 10px 10px 0;
+}
+
 
