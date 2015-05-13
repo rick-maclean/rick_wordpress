@@ -1175,10 +1175,49 @@ plugin that'll go through all the images and create the new size. So now I need 
 regenerate, and here you'll find a plugin called 
 				Regenerate Thumbnails created by Viper007Bond.
 
+Once the process is complete, we can go back to the Uploads folder, and you'll see that now each of the images has a 100 x 100 
+version in addition to the ones that are already there.
+
+That's because now we have regenerated a new image size for each of the individual images. I use featured images all the time 
+in my themes, both for myself and for my clients. Now that you know how to add new sizes, I'm sure you're starting to get ideas 
+about how to use this feature, and that's what we're going to do next.
 
 
 Adding featured images to posts and pages
 4m 43s
+Once you have featured images in your site, you can add them pretty much anywhere you want on the site. Because the featured image 
+is directly associated with each post and each page, without being in the content body, you can display these images in a different 
+way from regular images in the body. The key is to know how to call them up, and how to get the correct size when you do. I have 
+shown you this several times before. In the twentytwelve theme, the general way in which a featured image is displayed is at the 
+top here: top of the post, large image before anything else. But earlier in the course we created new category templates and in 
+these templates those gigantic featured images look pretty weird.
+
+To do that, we need to make some small changes to the content.php template and add in the featured image. First, I'll open content.php 
+in my child theme and find out where I want to put in this content. What I want to do is put it next to the excerpt, and since I already 
+have the conditional call to test for when the excerpt should be displayed, I'll just place it inside that conditional call.
+
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-summary -->
+		<?php else : ?>
+		
+		Note if there is no image to display we want conditional 
+		<?php 
+			if ( has_post_thumbnail() )	:
+				echo '<figure class="cat-thumb">';
+					the_post_thumbnail('category-thumb');    //use 'category-thumb' which was defined in my functions.php
+				echo '</figure>';
+			endif;
+		?>
+		
+But they don't look exactly right yet. I still have to float this to the left, and that's why I wrapped this figure class="cat-thumb" 
+around it, so that I can now create a style for cat-thumb.
+So I'll go to my style sheet, scroll down, add class cat-thumb, and then I'll say float: left;
+.cat-thumb {
+	float : left;
+	margin : 0 10px 10px 0;
+}
+
 
 
 
@@ -1192,10 +1231,135 @@ Adding featured images to posts and pages
 31m 1s
 Adding a welcome message to the front page
 1m 22s
+If you have been following this course from the very beginning, you should now have a pretty good idea of how you can use a 
+child theme to change the styles of your site and also change functionality of your site. Now we are going to take what we 
+have learned and change the overall site to make it easier for the visitors to understand and use. You may have noticed 
+that when you use a WordPress theme you generally have one of two options on the front page: you either have the index, 
+which shows the latest posts, or you have a front page template that shows some sort of welcome message, maybe a video, 
+and some widgets or other stuff.
+
+None of these are really good front page for people who are just starting out and just came to your site, because if you 
+have the index, all you see is new content and if you have the static front page, you have a static front page with no new 
+content. What I want to do is combine the two so you get a welcome message at the top, maybe with an image or a video, and 
+then you get the index underneath. The reason why I want to do this is because I want to give the people who visit the site 
+a great experience and that's one of the reasons why you want to build a website to begin with, to give people a great experience.
+
+And using a child theme, we can now take everything we learned, put it together, and then make a new experience on the front 
+page that works really well, both for you and for your visitors.
+
+
+
+
 Displaying page content in an index page
 7m 42s
+When you open a page or a post or a index page in WordPress what you're really doing is asking the database to return specific 
+cells from its tables to you, in a specific layout. This is what's called a database query. This means that if you know how to 
+manipulate the database queries, you can ask the database to return any information you want and place it anywhere. That's what 
+we're going to do now. In my site, I've created a new page. It's called Front Page. And in this page all I have is three paragraphs of text.
+
+What I want to do now is get this text to appear on the Front Page itself, above the index. So when people visit my site 
+they'll first see that welcome message and then they scroll down and see the index. 
+
+To get this to work, we're simply going to call the front-page content and display it into index.php template. 
+
+Here I'm going to teach you a trick. When I start adding this type of content into my site, say a content slider or a welcome 
+message or anything else that requires quite a bit of code, what I do is I place it in a separate file and then I just 
+call that file into the template.
+That way I know exactly where that content is if I need to edit it later.
+
+so create : welcome.php   save as php file
+
+Now you notice I'm pretty meticulous about how I write my HTML, and you might also wonder where I get all these ID names and everything 
+from. This is just a habit. I like to really document what I do and I write everything out and I give every single elements an ID or a 
+class so that I can easily target it with CSS later if I want to.
+
+
+Now if you've done any kind of work with WordPress before, you may notice that I'm using the entry- content class for this div here. 
+That's because I want the content I'm displaying at the top to have the same styling as to content that's in a regular post. And as 
+you know, entry-content is generally the class that's applied to any post content, so that's why you see it here. 
+
+This is the key stuff in welcome.php:
+<?php $page = get_page_by_title( 'Front page static' ); ?>
+		
+	<article id="intro-elements">
+		<div class="entry-content">
+		
+			<!--<p>This is the text that is displayed by the welcome.php file.</p> -->
+			<?php echo apply_filters('the_content', $page->post_content); ?>
+
+		</div><!-- .entry-content   note this will apply this syle-->
+
+To have this show up we need to copy index.php and copy to child theme
+In index.php:
+<?php get_template_part( 'welcome' ); ?>	
+		
+
+Now that I have my Front Page content displayed on the Front Page, I'm going to hide the Front Page button in my menu.
+So I'll go to the backend, to menus, and apply a menu that doesn't have a Front Page. I've already created one here to 
+the main menu. Save it, reload, and now we have a seamless experience. 
+
+ It is outside the automatic template queries generated, the real magic of WordPress happens. Once you wrap your head around the 
+ fact that you can call any content at any time from anywhere, you'll realize that can do pretty much anything you want, and the 
+ only limitation is your own imagination.
+ 
+ 
+		
+		
 Hooking in a featured image
 4m 34s
+In the previous movie, we added a welcome message to the top of our index page so that when people visit the site they immediately 
+get a welcome message. And this welcome message is coming from a separate page within WordPress. Now I want to take that a step 
+further and add a featured image to the welcome message and then display that featured image alongside the welcome message here 
+on the right. But this is a bit of a challenge, because we're now outside the loop. The loop is what runs down here in the index page.
+
+It shows all the different posts. But we created a special call that calls in content from a page to display above that. Now if 
+I use the normal post thumbnail template tag to get a post thumbnail to appear, or a featured image to appear, what will happen 
+is I'll see the featured image from the first post rather than a featured image from this page. What I need to do instead is 
+tell the database to specifically grab the post thumbnail or featured image from this page and display it next to the overall 
+content.
+
+But I'm getting ahead of myself here. First I need to add a featured image to my page. So I'll go to the backend, go to Pages, Front Page, 
+and add a featured image. So I'll add an image from my desktop, change the Title and Alternate Description, and set Use as featured image. 
+Update the page and now the page has a featured image.
+
+Now I need to call in that featured image in this new section that I have here on the top of my page. So I'll go to my child theme and 
+open welcome.php, and from here I need to insert my featured image. But first I have to figure out how to call it. I want to use a function 
+called get the post thumbnail. I want to use that function because with that function I'm allowed to provide an ID for a specific post or 
+page and then say I want the featured image from this particular page. But where do I get that ID from? Well, if you remember, this page 
+variable contains all the information from the database about our Front Page page.
+
+So if I do this print_r thing again-- say I want to print everything from page, save it and refresh in my browser-- you'll see in here 
+we have ID 114. This is the post ID for our page, so that's the number I want to use. That means I can call in that number in my new 
+function. Because I want to insert a featured image and then not share that in all cases I will have a featured image, for example, 
+if I pass this child theme onto someone else and they forget to apply a featured image to their Front Page post, they may not have 
+a featured image.
+
+I'm going to add in a conditional statement, if, and then I'll say get_the_post_thumbnail. And then I want to point to that particular 
+ID, so I'll say page-> ID. Then we get the ID contained within the page that's from the Front Page. Do some clean up here, and then I 
+need to end my conditional statement, endif. So now I'm saying if we have a post thumbnail attached to the page for this ID, so Front 
+Page, put in the following
+
+
+
+ I want to use that function because with that function I'm allowed to provide an ID for a specific post or page and then say 
+ I want the featured image from this particular page. But where do I get that ID from? Well, if you remember, this page variable 
+ contains all the information from the database about our Front Page page.
+ welcome.php 
+ to find the id for the image do this
+ <?php print_r($page); ?>
+ 
+ now I can see this on the web site [ID] => 139
+ 
+ Because I want to insert a featured image and then not share that in all cases I will have a featured image, for example, if 
+ I pass this child theme onto someone else and they forget to apply a featured image to their Front Page post, they may not 
+ have a featured image. I'm going to add in a conditional statement, 
+ SEE the changes in style.css and welcome.php
+ 
+ 
+
+
+
+
 Making the welcome message responsive
 6m 27s
 Restricting content to the first page of the blog
