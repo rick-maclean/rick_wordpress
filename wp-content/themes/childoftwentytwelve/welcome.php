@@ -23,4 +23,8 @@
 	</article><!-- #intro-elements -->
 </div><!-- #front-page-intro -->
 
+<div class="hide-button">
+	<a href="#" title="Hide the welcome message">Hide</a>
+</div><!-- .hide-button -->
+
 <!-- END front page featured content -->

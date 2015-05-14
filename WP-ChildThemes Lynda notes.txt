@@ -345,7 +345,6 @@ it doesn't break your site.
 
 
 
-
 Creating custom page templates
 5m 43s
 POSTS vs PAGES types of content 
@@ -1362,10 +1361,107 @@ Page, put in the following
 
 Making the welcome message responsive
 6m 27s
+Responsive to phones too.???
+Wants the image to be to the right. He wants to apply some CSS and thinks 2012 will have that. So he will look in 2012 FrontPage template.
+therefore Dashboard : Pages : Front Page --> change to FrontPageTemplate and see how it looks
+
+NOTE: Rick did not see the image on the right. So what happened?
+What matters here is that you can now see that the layout is the layout I want. I have image on the right and I have text on the left, 
+which means the work has already been done, and all I need to do is make my Front Page, the welcome.php file, call in the same styles.
+
+What we need is for it to say
+<figure class="entry-page-image">  in welcome.php
+
+
+You see here that as I resize the window, the content shifts around. But it looks really weird up here because currently 
+everything is kind of jammed together. So I need to add some style to make sure that there is space here and everything 
+is aligned properly. To save you some time, I have already created all the styles necessary and put them in the code snippets 
+for this movie. So if you go up to your code snippets, under movie 7.4, you find all the styles necessary. So I'll start by 
+copying this batch of styles here, go to my style.css file in my child theme, and just paste that in.
+
+This I put in the style.css already.
+
+If you want to know more about how to build responsive WordPress themes, you should go and check out my other course in 
+the lynda.com library called WordPress: Building Responsive Themes.
+see this:
+/* Minimum width of 600 pixels. */
+@media screen and (max-width: 600px) {
+	
+	#intro-elements {
+		float: none;
+		width: 100%;
+	}
+}
+
+
+
+
 Restricting content to the first page of the blog
 4m 22s
+In many cases, you want to restrict certain content or behaviors to a particular page or post in your site. This is relatively 
+easy when it comes to pages or posts, because you're dealing with single items. But what do you do from the page in question 
+is an index page. We can't test for a specific post id, because the post keeps changing. Instead, we have test to see if the 
+currently displayed template is the one we want and that it is in the order we want it to be in. Let me explain what I am 
+talking about here.
+
+We added a welcome message to our index template. It displays at the very top of the index template and then underneath you 
+have the index content.
+
+Logically, we only want the welcome message to appear on the front page, so Page number 1 of the index template. So how do we 
+do that? Well, we have to ask WordPress several questions. We both have to ask it, is this the front page that you are already 
+currently displaying.
+And we also have to ask it, is this first of the index pages, so that if it's the 2nd or 3rd or 50th of the index pages, 
+it doesn't display this welcome message. 
+
+need to use:
+is_front_page() tag 
+is_paged()      tag too
+So in index.php we need to wrap get template 'welcome' in a conditional statement
+
+see blendinsider.com  <--not available now
+
 Adding a jQuery function to show or hide the welcome message
 6m 34s
+When you add nonessential content like a welcome message to a page on your site, it's always a good idea to give people an 
+easy way of hiding that content. This is the type of behavior that JavaScript is great for. 
+
+JavaScript 
+allows you to add 
+the user interaction on top of existing content so that your user can interact with the content and change it even after 
+the page is being loaded in the browser. Now though we've added welcome message and an image here at the top of the page 
+and it looks the way we want it to, 
+
+I want to add an extra feature.
+A little button down here somewhere, you can click on the button and this content is hidden and then you click on the button 
+again and it shows the content again. To make that work I am going to use some jQuery Scripts, but before I can add the script 
+I need to add the button. In my child theme I'll open welcome.php, scroll all the way to the bottom, and here I'm simply going 
+to add a regular button. I'll wrap it in a div with a class, call the class hide-button, and inside this div I'm going to put a 
+regular link.
+
+in welcome.php put 
+<div class="hide-button">
+	<a href="#" title="Hide the welcome message">Hide</a>
+</div><!-- .hide-button -->
+
+Now I need to add the jQuery script to make the hide and show function work. First, I'll go to my child theme folder, 
+add a new folder call it JS.
+
+
+Also add this to functions.php see code snipits and css file additions.
+
+This hides and shows the Welcome content from welcome.php
+
+
+ JavaScripts can make your site more interesting and easier to use for your visitors. Adding JavaScript correctly 
+ through enqueuing allows creative flexibility and less clutter when you work with your theme. The key when using 
+ JavaScripts is to subtle about it.
+
+Adding too much fancy JS often leads to a clunky site that takes away from the content. What you have seen here in the 
+few last movies is how we can add advanced features into our site in a very easy way and add extra functionality for 
+our visitors. And that's kind of whole point of using a child theme, you make the experience better for your visitors.
+
+
+
 
 
 

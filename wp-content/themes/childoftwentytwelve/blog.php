@@ -1,4 +1,9 @@
 <?php
+/*
+Template Name: Blog
+*/
+?>
+<?php
 /**
  * The main template file
  *
@@ -16,12 +21,7 @@
 
 get_header(); ?>
 
-	<?php
-		if ( is_front_page() && !is_paged() ){ //is_paged means it is 2nd 3rd etc
-			get_template_part( 'welcome' ); //this runs welcome.php
-		}
-		 
-    ?> 
+	<?php get_template_part( 'welcome' ); //this runs welcome.php ?> 
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
