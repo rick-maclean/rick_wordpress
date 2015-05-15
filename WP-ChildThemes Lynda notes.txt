@@ -1474,10 +1474,85 @@ our visitors. And that's kind of whole point of using a child theme, you make th
 10m 23s
 Adding a custom favicon
 3m 58s
+Once you have a child theme you can be proud of, you need to put on the last finishing touches. These seem trivial and less important, 
+but they make all the difference in the long run. One such finishing touch is a custom favicon. A favicon is the little icon you see at 
+the top of your browser when you visit the site and it also appears next to your site name should someone decide to bookmark it. 
+Favicons are easy to create and easy to install. You just have to remember to do it. 
+
+I already have a graphic here. It's called favicon.png and it's a PNG file transparent and it's the one I want to use as my favicon. 
+But I can't just use a PNG as my favicon, I have to transform it into an icon file first. I can do that online through many different 
+services.
+http://xiconEditor.com
+
+then I can choose what sizes I want. I can choose all four sizes, you see them here or I can uncheck either one of these. I'm just going 
+to leave them all on.
+Export
+Copy to Childtheme
+
+Reference it in header.php 
+right after <head>
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+
+This shows up in the tab on Chrome before the name of the site. It works.
+
+ 
+ 
+
+
+
 Adding a custom screenshot
 2m 29s
+Theme screenshots are an important way of identifying what theme you're using. Adding a custom screenshot to your child theme is one of the 
+last things you should do before taking it live. When I say theme screenshots, I mean the little screenshots that appear when you go to your 
+Dashboard and go to Appearance and Themes. Here you can see that all my installed themes Twenty Eleven, Twenty Ten, and Twenty Twelve have 
+screenshots, but you also see that my child theme does not yet have a screenshot, so I need to create it.
+
+copy the parent screenshot to my child theme
+open the file in photoshop or something else.
+take a screen shot of my web page and paste it in (I'll also hit F11 to go full screen and then I'll hit Print Screen on my PC.)
+
+And when I'm happy with what I see and I think this looks pretty good, I simply go and save the file. I'll save it on top of the original 
+
+one in my child theme so it's going to be called screenshot.png.
+
+I'll replace it, go back to my Dashboard > Appearance > Themes and here you see my new screenshot. You notice that all I did was copy 
+the original file into my child themes, then opened that original file from child themes, paste in a new screenshot, and saved it. 
+WordPress automatically figures out that the file called screenshot.png is the screenshot for this theme, and now you can actually see 
+what the theme looks like before you activate it.
+
+With the screenshot in place, your child theme is easy to identify and differentiate from the parent theme when you're looking through 
+the installed themes on your site. And if you ever decide to publish your child theme so others can use it, the screenshot is all the 
+more important.
+
+
+
 Adding footer information
 3m 56s
+Just like an artist usually signs her paintings and other works somewhere on the bottom to put her mark on them, so should you 
+put your own information at the bottom of your new child theme so that others can see what you've done. When creating a child 
+theme, I always encourage some coding courtesy. By that I mean you should always say that this is a child theme and reference 
+the original. That way you're both giving props to the people who built the original theme and at the same time you're letting 
+people compare the original to your new and improved child theme.
+
+The logical place to put this information as well as some other information is down here in the footer. In addition to adding 
+information about your child theme, I also like to add a copyright notice with the current year and a link back to this site. 
+That's not strictly necessary, but it's a good idea to just remind people that when they see things online someone actually owns to 
+copyright to that content. So let's start by adding the copyright notice. I'll go to my child theme, open 
+
+footer.php, 
+
+and find where I want to put this information.
+put it after 
+<?php do_action( 'twentytwelve_credits' ); ?>
+
+put in this:
+Copyright &copy;  <?php echo date("Y"); ?> <a href="<?php echo home_url() ?>/" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name'); ?></a>. 
+<a href="http://wordpress.org/extend/themes/twentytwelve" title="Twenty Twelve" target="_blank">Twenty Twelve</a> child theme by Your Name
+
+
+
+
+
 
 
 
@@ -1491,5 +1566,97 @@ Adding footer information
 7m 14s
 What to do when a child theme crashes your website
 4m 38s
+Working on the Internet, you're bound to run into situations where your site goes down. And working with child themes, it's 
+quite likely that at some point or another, you make a small error that causes the site to either break or go down completely. 
+I like to say that the web is an inherently unstable platform, and we as web developers just work to make it appear as if the web 
+is stable. That is very true for WordPress, because although when everything works fine, WordPress works great, you only need to 
+make a tiny little mistake, and it has enormous consequences for your site.
+
+Fortunately, because of how WordPress is built, the fact that the site goes down or breaks doesn't really mean much, because all you have 
+to do is just fix the small error, and it will come back up again. So let me address two very common issues that arise when you work with 
+child themes. The first one is a standard code error. Throughout this course, we have been adding a lot of functions and functionalities 
+to the site editing different pages and different templates. Let me show you what happens if you make a tiny coding error in the wrong place.
+
+I'll open functions.php, and make a code error. So I'll simply delete this curly bracket here. I'll save it, reload the page and my website 
+disappeared. But worse than that, I can't access it at all. I can try to go to wp-admin, nothing. So I cannot access my site at all from the 
+web anymore. And all I did was removed a curly bracket. But the great thing about working with child themes and also about working with WordPress 
+is that when things like that happen, you can force WordPress to revert back to a stable state.
+
+The easiest way to do that is to simply go to your themes folder, and rename the folder for your child theme. So I'll rename this to your 
+child theme, 
+BROKEN, 
+and reload my page. And what happens now is WordPress tries to find the child theme, can't find it, and gives you 
+an error. The themes directory is either empty or doesn't exist. Please check your installation. What really happened was WordPress 
+fell back on a default theme. So now, you have Twenty Eleven activated, or you may have Twenty Twelve activated.
+
+The child theme is still there, but as we know, it doesn't work. So now that it doesn't work, I can go back and edit it so that I can make 
+it work again, and then put it back online. So I can go back into my theme, open functions.php, fix my error, and rename the folder. Then 
+I just have to go back to the site, reload the Themes page, and reactivate Child of Twenty Twelve.
+
+And with that, my site is back online and everything is fine. 
+
+The second common error is also done in functions.php. *************
+
+But you could accidentally do it other places too. It's very common that people make new functions like these ones. 
+But they use function names that 
+match existing function names either in WordPress or in the parent theme. If you do, you get a 
+
+double function, ********
+
+and if everything isn't 
+set up to handle double functions, you get massive code errors in the process.
+
+And with that, my site is back online and everything is fine. The second common error is also done in functions.php. But you could 
+accidentally do it other places too. It's very common that people make new functions like these ones. But they use function names 
+that match existing function names either in WordPress or in the parent theme. If you do, you get a double function, and if everything 
+isn't set up to handle double functions, you get massive code errors in the process.
+
+It's very easy to avoid this. 
+
+mytheme_....  for the functions names will avoid this
+
+All you have to do is give your new functions a proper name that's different from the parent theme function. 
+The general rule is to simply add something like mytheme_ and then the description of the function. Through this course, I have actually 
+added a couple of different names, and to be honest with you, that's a bit sloppy. I should've actually given everything the same name 
+so it's easy to understand. But you get my drift. By saying mytheme_ in front of each function or mychildtheme_ or something like that 
+or even the name of the theme, you're avoiding the chance of anything overwriting the existing theme or crashing with WordPress.
+
+The default in WordPress is that everything is either started with WP or it just spells out the function itself. So if you always add 
+either your own name or the name of the theme or something else at the front of each function, you'll never clash with anything else. 
+WordPress site crashes can be pretty disturbing, but it's very rare indeed that a WordPress site truly goes down. In almost every case, 
+the site crash is caused by either bad code or a conflict in the theme or plug-in.
+
+That means, retracing your steps or if the worst comes to worst, disabling your child theme, will usually get you back up and running 
+just like that.
+
+
+
 Updating parent and child themes
 2m 36s
+By following this course, you've now created an advanced child theme based on the Twenty Twelve theme, and added lots of interesting 
+functionality. And I also hope you've walked away with some information about how you can use the same techniques to alter other themes 
+if you want to use them. Before we wrap up, I want to impart on you some very important information about updates. And this is something 
+I tell everyone who works with WordPress. When you have a WordPress site, it's extremely important that you always keep it up-to-date.
+
+If you don't keep updating your site, you run the risk of either missing out on important updates and features, or even worse, you might 
+leave your site open for attacks. It's very easy to update both WordPress and also update themes and plug-ins. You just have to remember 
+to keep in mind that you need to check if they need to be updated. And because you're working with a child theme, it's actually completely 
+safe to update the parent theme for your child theme, because as I've said several times throughout this course, if you update the parent 
+theme, nothing really happens to the child theme.
+
+You just add a new functionality and new security features. So how do you know what needs to be updated? Well, WordPress makes it very 
+easy for you. Once you're logged in, if you're on the front page, you'll actually see this recycling sign up here, and it will tell you 
+if you need updates. Right now, I need to update one plug-in and one theme. If I am on the back end and I go to the Dashboard, you'll 
+see, under Dashboard, we have a link that says Updates and it will tell you how many items need to be updated.
+
+If I go to the Updates link, I'll get all the information about the different versions I have installed. Here you see I'm currently 
+running the latest version of WordPress. There's one plug-in that needs to be updated, and I also have one theme that needs to be 
+updated. Updating WordPress, updating plug-ins, and updating themes is very easy. All you have to do is select them and click Update, 
+and WordPress pretty much does it for you. In some cases, the server will prevent you from doing this automatically. And in those very 
+rare cases, you need to do the update manually.
+
+But in almost every case, the update is automatic. If you see that there is an update to WordPress or to a plug-in or to a theme, 
+apply the update right away. Chances are you'll add a new feature that will make your site even better. Now you have a fully built-out 
+child theme that you can play with, you can augment, and you can change into anything you want. Thank you for taking part in this 
+journey through child themes with me. This is Morten signing out!
+
